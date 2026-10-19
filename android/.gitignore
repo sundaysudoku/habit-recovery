@@ -12,3 +12,6 @@ GeneratedPluginRegistrant.java
 key.properties
 **/*.keystore
 **/*.jks
+
+# Shared, non-secret DEBUG key so test APKs from CI can update each other. Never used for release.
+!app/debug.keystore

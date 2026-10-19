@@ -43,6 +43,13 @@ android {
     }
 
     signingConfigs {
+        // Same non-secret debug key everywhere (CI builds included), so test APKs can be installed over each other.
+        getByName("debug") {
+            storeFile = file("debug.keystore")
+            storePassword = "android"
+            keyAlias = "androiddebugkey"
+            keyPassword = "android"
+        }
         if (keystoreProperties.containsKey("storeFile")) {
             create("release") {
                 storeFile = file(keystoreProperties["storeFile"] as String)

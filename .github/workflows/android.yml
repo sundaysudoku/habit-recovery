@@ -9,6 +9,11 @@ on:
 permissions:
   contents: write
 
+# One build at a time per branch; a newer push cancels the older one.
+concurrency:
+  group: android-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
