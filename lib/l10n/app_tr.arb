@@ -92,9 +92,13 @@
   "privacyStoredTitle": "Yalnızca cihazında saklanır",
   "privacyStoredBody": "Alışkanlıkların, programların ve kayıtların bu cihazdaki bir veritabanına kaydedilir. Hiçbir yere yüklenmez.",
   "privacyNoAccountTitle": "Hesap yok, takip yok",
-  "privacyNoAccountBody": "Kaydolman gerekmez. Uygulama kişisel veri toplamaz; analiz ya da sosyal özellik içermez.",
+  "privacyNoAccountBody": "Kayıt olmanız gerekmez. Uygulamada analiz ve sosyal özellikler yoktur ve kendi başına hiçbir kişisel veri toplamaz.",
   "privacyNotificationsTitle": "Hatırlatıcılar yerel kalır",
   "privacyNotificationsBody": "Hatırlatıcıları telefonun kendisi planlar. Hiçbir sunucudan bir şey gönderilmez.",
   "privacyDeleteTitle": "Kontrol sende",
-  "privacyDeleteBody": "Bir alışkanlığı silmek, kayıtlarını bu cihazdan kaldırır. Uygulamayı kaldırmak tüm verilerini siler."
+  "privacyDeleteBody": "Bir alışkanlığı silmek, kayıtlarını bu cihazdan kaldırır. Uygulamayı kaldırmak tüm verilerini siler.",
+  "privacyAdsTitle": "Tek bir küçük reklam",
+  "privacyAdsBody": "Uygulama ücretsizdir ve Google AdMob'dan tek bir küçük banner reklam gösterir. Google, bunu göstermek için cihazınızın reklam kimliğini kullanabilir. Yasaların gerektirdiği yerlerde önce sizden izin istenir ve bu seçimi daha sonra Ayarlar'dan değiştirebilirsiniz. Alışkanlıklarınız reklam verenlerle asla paylaşılmaz.",
+  "settingsAdChoices": "Reklam gizliliği seçenekleri",
+  "settingsAdChoicesSummary": "Reklam iznini gözden geçirin veya değiştirin."
 }

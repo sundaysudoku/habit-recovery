@@ -10,9 +10,22 @@ class PrivacyScreen extends StatelessWidget {
     final l10n = AppLocalizations.of(context);
     final theme = Theme.of(context);
     final sections = [
-      (Icons.phone_android_outlined, l10n.privacyStoredTitle, l10n.privacyStoredBody),
-      (Icons.person_off_outlined, l10n.privacyNoAccountTitle, l10n.privacyNoAccountBody),
-      (Icons.notifications_outlined, l10n.privacyNotificationsTitle, l10n.privacyNotificationsBody),
+      (
+        Icons.phone_android_outlined,
+        l10n.privacyStoredTitle,
+        l10n.privacyStoredBody,
+      ),
+      (
+        Icons.person_off_outlined,
+        l10n.privacyNoAccountTitle,
+        l10n.privacyNoAccountBody,
+      ),
+      (
+        Icons.notifications_outlined,
+        l10n.privacyNotificationsTitle,
+        l10n.privacyNotificationsBody,
+      ),
+      (Icons.ads_click_outlined, l10n.privacyAdsTitle, l10n.privacyAdsBody),
       (Icons.delete_outline, l10n.privacyDeleteTitle, l10n.privacyDeleteBody),
     ];
     return Scaffold(

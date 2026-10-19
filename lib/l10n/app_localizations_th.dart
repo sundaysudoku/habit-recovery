@@ -343,7 +343,7 @@ class AppLocalizationsTh extends AppLocalizations {
 
   @override
   String get privacyNoAccountBody =>
-      'คุณไม่ต้องสมัครสมาชิก แอปนี้ไม่เก็บข้อมูลส่วนบุคคล และไม่มีระบบวิเคราะห์หรือฟีเจอร์โซเชียล';
+      'คุณไม่ต้องสมัครสมาชิก แอปไม่มีระบบวิเคราะห์และฟีเจอร์โซเชียล และไม่เก็บข้อมูลส่วนบุคคลใด ๆ ด้วยตัวเอง';
 
   @override
   String get privacyNotificationsTitle => 'การเตือนอยู่ในเครื่อง';
@@ -358,4 +358,18 @@ class AppLocalizationsTh extends AppLocalizations {
   @override
   String get privacyDeleteBody =>
       'การลบนิสัยจะลบบันทึกการเช็กอินของนิสัยนั้นออกจากเครื่องนี้ การถอนการติดตั้งแอปจะลบข้อมูลทั้งหมดของคุณ';
+
+  @override
+  String get privacyAdsTitle => 'โฆษณาเล็ก ๆ หนึ่งชิ้น';
+
+  @override
+  String get privacyAdsBody =>
+      'แอปนี้ใช้ฟรีและแสดงแบนเนอร์โฆษณาขนาดเล็กเพียงหนึ่งชิ้นจาก Google AdMob โดย Google อาจใช้รหัสโฆษณาของอุปกรณ์คุณเพื่อแสดงโฆษณานั้น หากกฎหมายกำหนด เราจะขอความยินยอมจากคุณก่อน และคุณเปลี่ยนการเลือกนี้ภายหลังได้ทุกเมื่อในการตั้งค่า ข้อมูลนิสัยของคุณจะไม่ถูกแชร์ให้ผู้ลงโฆษณาเลย';
+
+  @override
+  String get settingsAdChoices => 'ตัวเลือกความเป็นส่วนตัวของโฆษณา';
+
+  @override
+  String get settingsAdChoicesSummary =>
+      'ตรวจสอบหรือเปลี่ยนความยินยอมของคุณสำหรับโฆษณา';
 }

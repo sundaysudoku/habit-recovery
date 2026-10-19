@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../core/ads/ads_providers.dart';
 import '../../../l10n/app_localizations.dart';
 import '../../reminders/data/reminder_providers.dart';
 import '../../reminders/presentation/notification_permission.dart';
@@ -53,6 +54,13 @@ class SettingsScreen extends ConsumerWidget {
               MaterialPageRoute<void>(builder: (_) => const PrivacyScreen()),
             ),
           ),
+          if (ref.watch(adPrivacyOptionsRequiredProvider).value ?? false)
+            ListTile(
+              leading: const Icon(Icons.ads_click_outlined),
+              title: Text(l10n.settingsAdChoices),
+              subtitle: Text(l10n.settingsAdChoicesSummary),
+              onTap: () => ref.read(adsServiceProvider).showPrivacyOptions(),
+            ),
         ],
       ),
     );

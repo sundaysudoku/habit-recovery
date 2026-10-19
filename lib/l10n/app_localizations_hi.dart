@@ -343,7 +343,7 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get privacyNoAccountBody =>
-      'साइन अप करने की ज़रूरत नहीं। ऐप निजी डेटा इकट्ठा नहीं करता और इसमें कोई एनालिटिक्स या सोशल फ़ीचर नहीं हैं।';
+      'साइन अप करने की ज़रूरत नहीं है। ऐप में एनालिटिक्स और सोशल फ़ीचर नहीं हैं, और यह अपने आप कोई निजी डेटा इकट्ठा नहीं करता।';
 
   @override
   String get privacyNotificationsTitle => 'रिमाइंडर स्थानीय रहते हैं';
@@ -358,4 +358,18 @@ class AppLocalizationsHi extends AppLocalizations {
   @override
   String get privacyDeleteBody =>
       'आदत हटाने से उसके चेक-इन इस डिवाइस से हट जाते हैं। ऐप अनइंस्टॉल करने से आपका सारा डेटा हट जाता है।';
+
+  @override
+  String get privacyAdsTitle => 'एक छोटा-सा विज्ञापन';
+
+  @override
+  String get privacyAdsBody =>
+      'ऐप मुफ़्त है और Google AdMob का सिर्फ़ एक छोटा बैनर विज्ञापन दिखाता है। इसे दिखाने के लिए Google आपके डिवाइस की विज्ञापन आईडी का उपयोग कर सकता है। जहाँ कानून ज़रूरी करता है, वहाँ पहले आपसे सहमति माँगी जाती है, और आप बाद में सेटिंग्स में यह चुनाव बदल सकते हैं। आपकी आदतें विज्ञापनदाताओं के साथ कभी साझा नहीं की जातीं।';
+
+  @override
+  String get settingsAdChoices => 'विज्ञापन गोपनीयता विकल्प';
+
+  @override
+  String get settingsAdChoicesSummary =>
+      'विज्ञापन के लिए अपनी सहमति देखें या बदलें।';
 }

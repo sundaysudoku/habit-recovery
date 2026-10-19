@@ -92,9 +92,13 @@
   "privacyStoredTitle": "Tylko na Twoim urządzeniu",
   "privacyStoredBody": "Twoje nawyki, harmonogramy i odhaczenia są zapisane w bazie danych na tym urządzeniu. Nigdy nigdzie nie są wysyłane.",
   "privacyNoAccountTitle": "Bez konta i śledzenia",
-  "privacyNoAccountBody": "Nie musisz się rejestrować. Aplikacja nie zbiera danych osobowych, nie ma analityki ani funkcji społecznościowych.",
+  "privacyNoAccountBody": "Nie musisz się rejestrować. Aplikacja nie ma analityki ani funkcji społecznościowych i sama nie zbiera żadnych danych osobowych.",
   "privacyNotificationsTitle": "Przypomnienia zostają lokalnie",
   "privacyNotificationsBody": "Przypomnienia planuje sam telefon. Żaden serwer niczego nie wysyła.",
   "privacyDeleteTitle": "Ty masz kontrolę",
-  "privacyDeleteBody": "Usunięcie nawyku kasuje jego odhaczenia z tego urządzenia. Odinstalowanie aplikacji usuwa wszystkie Twoje dane."
+  "privacyDeleteBody": "Usunięcie nawyku kasuje jego odhaczenia z tego urządzenia. Odinstalowanie aplikacji usuwa wszystkie Twoje dane.",
+  "privacyAdsTitle": "Jedna mała reklama",
+  "privacyAdsBody": "Aplikacja jest bezpłatna i wyświetla jeden mały baner reklamowy z Google AdMob. Google może w tym celu używać identyfikatora reklamowego Twojego urządzenia. Tam, gdzie wymaga tego prawo, najpierw zapytamy o zgodę, a swój wybór możesz później zmienić w Ustawieniach. Twoje nawyki nigdy nie są udostępniane reklamodawcom.",
+  "settingsAdChoices": "Prywatność reklam",
+  "settingsAdChoicesSummary": "Sprawdź lub zmień swoją zgodę dotyczącą reklamy."
 }

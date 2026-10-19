@@ -344,7 +344,7 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get privacyNoAccountBody =>
-      'Bạn không cần đăng ký. Ứng dụng không thu thập dữ liệu cá nhân, không có phân tích hay tính năng mạng xã hội.';
+      'Bạn không cần đăng ký. Ứng dụng không có phân tích hay tính năng mạng xã hội, và tự nó không thu thập dữ liệu cá nhân.';
 
   @override
   String get privacyNotificationsTitle => 'Nhắc nhở nằm ngay trên máy';
@@ -359,4 +359,18 @@ class AppLocalizationsVi extends AppLocalizations {
   @override
   String get privacyDeleteBody =>
       'Xóa một thói quen sẽ xóa các check-in của nó khỏi thiết bị này. Gỡ ứng dụng sẽ xóa toàn bộ dữ liệu của bạn.';
+
+  @override
+  String get privacyAdsTitle => 'Một quảng cáo nhỏ';
+
+  @override
+  String get privacyAdsBody =>
+      'Ứng dụng miễn phí và chỉ hiển thị một biển quảng cáo nhỏ của Google AdMob. Google có thể dùng mã quảng cáo của thiết bị để hiển thị nó. Khi luật yêu cầu, bạn sẽ được hỏi đồng ý trước và có thể đổi lựa chọn sau trong Cài đặt. Thói quen của bạn không bao giờ được chia sẻ với nhà quảng cáo.';
+
+  @override
+  String get settingsAdChoices => 'Lựa chọn riêng tư về quảng cáo';
+
+  @override
+  String get settingsAdChoicesSummary =>
+      'Xem hoặc đổi sự đồng ý của bạn với quảng cáo.';
 }

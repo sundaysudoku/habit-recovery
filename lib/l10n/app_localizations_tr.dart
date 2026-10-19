@@ -345,7 +345,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get privacyNoAccountBody =>
-      'Kaydolman gerekmez. Uygulama kişisel veri toplamaz; analiz ya da sosyal özellik içermez.';
+      'Kayıt olmanız gerekmez. Uygulamada analiz ve sosyal özellikler yoktur ve kendi başına hiçbir kişisel veri toplamaz.';
 
   @override
   String get privacyNotificationsTitle => 'Hatırlatıcılar yerel kalır';
@@ -360,4 +360,18 @@ class AppLocalizationsTr extends AppLocalizations {
   @override
   String get privacyDeleteBody =>
       'Bir alışkanlığı silmek, kayıtlarını bu cihazdan kaldırır. Uygulamayı kaldırmak tüm verilerini siler.';
+
+  @override
+  String get privacyAdsTitle => 'Tek bir küçük reklam';
+
+  @override
+  String get privacyAdsBody =>
+      'Uygulama ücretsizdir ve Google AdMob\'dan tek bir küçük banner reklam gösterir. Google, bunu göstermek için cihazınızın reklam kimliğini kullanabilir. Yasaların gerektirdiği yerlerde önce sizden izin istenir ve bu seçimi daha sonra Ayarlar\'dan değiştirebilirsiniz. Alışkanlıklarınız reklam verenlerle asla paylaşılmaz.';
+
+  @override
+  String get settingsAdChoices => 'Reklam gizliliği seçenekleri';
+
+  @override
+  String get settingsAdChoicesSummary =>
+      'Reklam iznini gözden geçirin veya değiştirin.';
 }

@@ -689,7 +689,7 @@ abstract class AppLocalizations {
   /// No description provided for @privacyNoAccountBody.
   ///
   /// In en, this message translates to:
-  /// **'You do not need to sign up. The app does not collect personal data and has no analytics or social features.'**
+  /// **'You do not need to sign up. The app has no analytics and no social features, and collects no personal data of its own.'**
   String get privacyNoAccountBody;
 
   /// No description provided for @privacyNotificationsTitle.
@@ -715,6 +715,30 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Deleting a habit removes its check-ins from this device. Uninstalling the app removes all of your data.'**
   String get privacyDeleteBody;
+
+  /// No description provided for @privacyAdsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'One small ad'**
+  String get privacyAdsTitle;
+
+  /// No description provided for @privacyAdsBody.
+  ///
+  /// In en, this message translates to:
+  /// **'The app is free and shows a single small banner ad from Google AdMob. Google may use your device\'s advertising ID to show it. Where the law requires, you are asked for consent first, and you can change that choice later in Settings. Your habits are never shared with advertisers.'**
+  String get privacyAdsBody;
+
+  /// No description provided for @settingsAdChoices.
+  ///
+  /// In en, this message translates to:
+  /// **'Ad privacy choices'**
+  String get settingsAdChoices;
+
+  /// No description provided for @settingsAdChoicesSummary.
+  ///
+  /// In en, this message translates to:
+  /// **'Review or change your consent for the ad.'**
+  String get settingsAdChoicesSummary;
 }
 
 class _AppLocalizationsDelegate

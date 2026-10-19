@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../core/ads/ad_banner_bar.dart';
 import '../features/habits/presentation/habits_screen.dart';
 import '../features/progress/presentation/progress_screen.dart';
 import '../features/settings/presentation/settings_screen.dart';
@@ -28,7 +29,14 @@ class _HomeShellState extends State<HomeShell> {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
     return Scaffold(
-      body: IndexedStack(index: _index, children: _screens),
+      body: Column(
+        children: [
+          Expanded(
+            child: IndexedStack(index: _index, children: _screens),
+          ),
+          const AdBannerBar(),
+        ],
+      ),
       bottomNavigationBar: NavigationBar(
         selectedIndex: _index,
         onDestinationSelected: (index) => setState(() => _index = index),

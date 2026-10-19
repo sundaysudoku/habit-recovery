@@ -345,7 +345,7 @@ class AppLocalizationsUr extends AppLocalizations {
 
   @override
   String get privacyNoAccountBody =>
-      'سائن اپ کرنے کی ضرورت نہیں۔ ایپ ذاتی ڈیٹا جمع نہیں کرتی اور اس میں اینالیٹکس یا سوشل فیچرز نہیں ہیں۔';
+      'آپ کو سائن اپ کرنے کی ضرورت نہیں۔ ایپ میں اینالیٹکس اور سوشل فیچرز نہیں ہیں، اور یہ خود کوئی ذاتی ڈیٹا جمع نہیں کرتی۔';
 
   @override
   String get privacyNotificationsTitle => 'یاددہانیاں مقامی رہتی ہیں';
@@ -360,4 +360,18 @@ class AppLocalizationsUr extends AppLocalizations {
   @override
   String get privacyDeleteBody =>
       'عادت حذف کرنے سے اس کے چیک اِن اس ڈیوائس سے ہٹ جاتے ہیں۔ ایپ اَن انسٹال کرنے سے آپ کا تمام ڈیٹا ہٹ جاتا ہے۔';
+
+  @override
+  String get privacyAdsTitle => 'ایک چھوٹا سا اشتہار';
+
+  @override
+  String get privacyAdsBody =>
+      'ایپ مفت ہے اور Google AdMob کی طرف سے صرف ایک چھوٹا سا بینر اشتہار دکھاتی ہے۔ اسے دکھانے کے لیے Google آپ کے آلے کی اشتہاری آئی ڈی استعمال کر سکتا ہے۔ جہاں قانون تقاضا کرے، وہاں پہلے آپ سے اجازت لی جاتی ہے، اور آپ بعد میں سیٹنگز میں یہ انتخاب بدل سکتے ہیں۔ آپ کی عادات اشتہار دینے والوں کے ساتھ کبھی شیئر نہیں کی جاتیں۔';
+
+  @override
+  String get settingsAdChoices => 'اشتہاری پرائیویسی کے اختیارات';
+
+  @override
+  String get settingsAdChoicesSummary =>
+      'اشتہار کے لیے اپنی رضامندی دیکھیں یا بدلیں۔';
 }

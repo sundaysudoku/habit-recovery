@@ -92,9 +92,13 @@
   "privacyStoredTitle": "Guardado solo en tu dispositivo",
   "privacyStoredBody": "Tus hábitos, horarios y registros se guardan en una base de datos de este dispositivo. Nunca se suben a ningún lado.",
   "privacyNoAccountTitle": "Sin cuenta, sin rastreo",
-  "privacyNoAccountBody": "No necesitas registrarte. La app no recopila datos personales y no tiene analíticas ni funciones sociales.",
+  "privacyNoAccountBody": "No necesitas registrarte. La app no tiene analíticas ni funciones sociales, y no recopila datos personales propios.",
   "privacyNotificationsTitle": "Los recordatorios son locales",
   "privacyNotificationsBody": "Tu propio teléfono programa los recordatorios. No se envía nada desde un servidor.",
   "privacyDeleteTitle": "Tú tienes el control",
-  "privacyDeleteBody": "Eliminar un hábito borra sus registros de este dispositivo. Al desinstalar la app se borran todos tus datos."
+  "privacyDeleteBody": "Eliminar un hábito borra sus registros de este dispositivo. Al desinstalar la app se borran todos tus datos.",
+  "privacyAdsTitle": "Un pequeño anuncio",
+  "privacyAdsBody": "La app es gratuita y muestra un único anuncio de banner pequeño de Google AdMob. Google puede usar el identificador publicitario de tu dispositivo para mostrarlo. Cuando la ley lo exige, primero se te pide tu consentimiento, y puedes cambiar esa decisión más adelante en Ajustes. Tus hábitos nunca se comparten con anunciantes.",
+  "settingsAdChoices": "Opciones de privacidad de anuncios",
+  "settingsAdChoicesSummary": "Revisa o cambia tu consentimiento para el anuncio."
 }

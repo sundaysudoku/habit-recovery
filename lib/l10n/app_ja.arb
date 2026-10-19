@@ -92,9 +92,13 @@
   "privacyStoredTitle": "この端末にだけ保存",
   "privacyStoredBody": "習慣、スケジュール、記録はこの端末のデータベースに保存され、どこにもアップロードされません。",
   "privacyNoAccountTitle": "アカウントも追跡もなし",
-  "privacyNoAccountBody": "登録は不要です。アプリは個人データを収集せず、解析機能やソーシャル機能もありません。",
+  "privacyNoAccountBody": "登録は不要です。アプリには解析機能もソーシャル機能もなく、アプリ自身が個人データを収集することもありません。",
   "privacyNotificationsTitle": "リマインダーは端末内だけ",
   "privacyNotificationsBody": "リマインダーはスマホ自身が予約します。サーバーからは何も送信されません。",
   "privacyDeleteTitle": "すべてあなたの手の中に",
-  "privacyDeleteBody": "習慣を削除すると、その記録がこの端末から消えます。アプリをアンインストールすると、すべてのデータが消えます。"
+  "privacyDeleteBody": "習慣を削除すると、その記録がこの端末から消えます。アプリをアンインストールすると、すべてのデータが消えます。",
+  "privacyAdsTitle": "小さな広告がひとつ",
+  "privacyAdsBody": "このアプリは無料で、Google AdMob の小さなバナー広告を1つだけ表示します。Google は広告を表示するために、端末の広告 ID を使うことがあります。法律で必要な場合は、先に同意をお願いしていて、その選択は後から設定でいつでも変更できます。あなたの習慣が広告主に共有されることはありません。",
+  "settingsAdChoices": "広告のプライバシー設定",
+  "settingsAdChoicesSummary": "広告に関する同意を確認または変更できます。"
 }

@@ -345,7 +345,7 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get privacyNoAccountBody =>
-      'সাইন আপ করতে হয় না। অ্যাপটি ব্যক্তিগত তথ্য সংগ্রহ করে না এবং এতে অ্যানালিটিক্স বা সোশ্যাল ফিচার নেই।';
+      'সাইন আপ করতে হয় না। অ্যাপে কোনো অ্যানালিটিক্স বা সোশ্যাল ফিচার নেই, আর অ্যাপ নিজে থেকে কোনো ব্যক্তিগত তথ্য সংগ্রহ করে না।';
 
   @override
   String get privacyNotificationsTitle => 'রিমাইন্ডার থাকে স্থানীয়ভাবে';
@@ -360,4 +360,18 @@ class AppLocalizationsBn extends AppLocalizations {
   @override
   String get privacyDeleteBody =>
       'অভ্যাস মুছলে এর চেক-ইন এই ডিভাইস থেকে মুছে যায়। অ্যাপ আনইনস্টল করলে আপনার সব তথ্য মুছে যায়।';
+
+  @override
+  String get privacyAdsTitle => 'একটি ছোট বিজ্ঞাপন';
+
+  @override
+  String get privacyAdsBody =>
+      'অ্যাপটি বিনামূল্যে এবং Google AdMob থেকে শুধু একটি ছোট ব্যানার বিজ্ঞাপন দেখায়। বিজ্ঞাপন দেখাতে Google আপনার ডিভাইসের বিজ্ঞাপন আইডি ব্যবহার করতে পারে। আইন অনুযায়ী প্রয়োজন হলে আগে আপনার সম্মতি চাওয়া হয়, আর পরে সেটিংসে গিয়ে এই পছন্দ বদলে নিতে পারেন। আপনার অভ্যাসের তথ্য কখনোই বিজ্ঞাপনদাতাদের সঙ্গে শেয়ার করা হয় না।';
+
+  @override
+  String get settingsAdChoices => 'বিজ্ঞাপনের গোপনীয়তা বিকল্প';
+
+  @override
+  String get settingsAdChoicesSummary =>
+      'বিজ্ঞাপনের জন্য আপনার সম্মতি দেখুন বা পরিবর্তন করুন।';
 }

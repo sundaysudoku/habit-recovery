@@ -92,9 +92,13 @@
   "privacyStoredTitle": "Hanya disimpan di perangkatmu",
   "privacyStoredBody": "Kebiasaan, jadwal, dan catatanmu disimpan dalam basis data di perangkat ini. Semuanya tidak pernah diunggah ke mana pun.",
   "privacyNoAccountTitle": "Tanpa akun, tanpa pelacakan",
-  "privacyNoAccountBody": "Kamu tidak perlu mendaftar. Aplikasi ini tidak mengumpulkan data pribadi dan tidak memiliki analitik atau fitur sosial.",
+  "privacyNoAccountBody": "Kamu tidak perlu mendaftar. Aplikasi ini tidak memiliki analitik maupun fitur sosial, dan tidak mengumpulkan data pribadi apa pun sendiri.",
   "privacyNotificationsTitle": "Pengingat tetap lokal",
   "privacyNotificationsBody": "Pengingat dijadwalkan oleh ponselmu sendiri. Tidak ada yang dikirim dari server.",
   "privacyDeleteTitle": "Kamu yang mengendalikan",
-  "privacyDeleteBody": "Menghapus kebiasaan akan menghapus catatannya dari perangkat ini. Menghapus aplikasi akan menghapus semua datamu."
+  "privacyDeleteBody": "Menghapus kebiasaan akan menghapus catatannya dari perangkat ini. Menghapus aplikasi akan menghapus semua datamu.",
+  "privacyAdsTitle": "Satu iklan kecil",
+  "privacyAdsBody": "Aplikasi ini gratis dan hanya menampilkan satu iklan banner kecil dari Google AdMob. Google dapat menggunakan ID iklan perangkatmu untuk menampilkannya. Jika diwajibkan oleh hukum, kamu akan dimintai persetujuan terlebih dahulu, dan pilihan itu bisa kamu ubah kapan saja di Pengaturan. Kebiasaanmu tidak pernah dibagikan kepada pengiklan.",
+  "settingsAdChoices": "Pilihan privasi iklan",
+  "settingsAdChoicesSummary": "Tinjau atau ubah persetujuanmu untuk iklan."
 }

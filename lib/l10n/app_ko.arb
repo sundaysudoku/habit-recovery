@@ -92,9 +92,13 @@
   "privacyStoredTitle": "내 기기에만 저장",
   "privacyStoredBody": "습관, 일정, 체크인 기록은 이 기기의 데이터베이스에 저장되며 어디에도 업로드되지 않아요.",
   "privacyNoAccountTitle": "계정도 추적도 없어요",
-  "privacyNoAccountBody": "가입할 필요가 없어요. 앱은 개인 정보를 수집하지 않으며 분석이나 소셜 기능도 없어요.",
+  "privacyNoAccountBody": "가입할 필요가 없어요. 앱에는 분석이나 소셜 기능이 없고, 앱이 직접 개인 정보를 수집하지도 않아요.",
   "privacyNotificationsTitle": "알림은 기기 안에서만",
   "privacyNotificationsBody": "알림은 휴대폰이 직접 예약해요. 서버에서 보내는 것은 아무것도 없어요.",
   "privacyDeleteTitle": "모든 건 내 손에",
-  "privacyDeleteBody": "습관을 삭제하면 이 기기에서 해당 체크인 기록이 지워져요. 앱을 삭제하면 모든 데이터가 지워져요."
+  "privacyDeleteBody": "습관을 삭제하면 이 기기에서 해당 체크인 기록이 지워져요. 앱을 삭제하면 모든 데이터가 지워져요.",
+  "privacyAdsTitle": "작은 광고 하나",
+  "privacyAdsBody": "이 앱은 무료이며 Google AdMob의 작은 배너 광고를 하나만 보여 드려요. Google은 광고를 보여 주기 위해 기기의 광고 ID를 사용할 수 있어요. 법에서 요구하는 경우에는 먼저 동의를 여쭙고, 이 선택은 나중에 설정에서 언제든 바꿀 수 있어요. 당신의 습관 기록은 광고주에게 절대 공유되지 않아요.",
+  "settingsAdChoices": "광고 개인정보 선택",
+  "settingsAdChoicesSummary": "광고에 대한 동의를 확인하거나 변경해요."
 }

@@ -92,9 +92,13 @@
   "privacyStoredTitle": "Guardado só no seu dispositivo",
   "privacyStoredBody": "Seus hábitos, programações e registros ficam salvos em um banco de dados neste dispositivo. Nunca são enviados para lugar nenhum.",
   "privacyNoAccountTitle": "Sem conta, sem rastreamento",
-  "privacyNoAccountBody": "Você não precisa se cadastrar. O app não coleta dados pessoais e não tem análises nem recursos sociais.",
+  "privacyNoAccountBody": "Você não precisa se cadastrar. O app não tem análises nem recursos sociais e não coleta dados pessoais próprios.",
   "privacyNotificationsTitle": "Os lembretes ficam locais",
   "privacyNotificationsBody": "Os lembretes são agendados pelo próprio celular. Nada é enviado por um servidor.",
   "privacyDeleteTitle": "Você está no controle",
-  "privacyDeleteBody": "Excluir um hábito remove os registros dele deste dispositivo. Desinstalar o app remove todos os seus dados."
+  "privacyDeleteBody": "Excluir um hábito remove os registros dele deste dispositivo. Desinstalar o app remove todos os seus dados.",
+  "privacyAdsTitle": "Um pequeno anúncio",
+  "privacyAdsBody": "O app é gratuito e mostra um único banner pequeno do Google AdMob. O Google pode usar o ID de publicidade do seu dispositivo para exibi-lo. Quando a lei exige, primeiro pedimos o seu consentimento, e você pode mudar essa escolha depois nos Ajustes. Seus hábitos nunca são compartilhados com anunciantes.",
+  "settingsAdChoices": "Opções de privacidade de anúncios",
+  "settingsAdChoicesSummary": "Revise ou altere o seu consentimento para o anúncio."
 }

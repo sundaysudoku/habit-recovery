@@ -326,7 +326,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get privacyNoAccountTitle => '无需账号,无追踪';
 
   @override
-  String get privacyNoAccountBody => '你不需要注册。应用不收集个人数据,也没有数据分析或社交功能。';
+  String get privacyNoAccountBody => '你不需要注册。应用没有数据分析和社交功能,也不会自行收集任何个人数据。';
 
   @override
   String get privacyNotificationsTitle => '提醒只在本地';
@@ -339,4 +339,17 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get privacyDeleteBody => '删除习惯会从这台设备上移除它的打卡记录。卸载应用会移除你的所有数据。';
+
+  @override
+  String get privacyAdsTitle => '一则小广告';
+
+  @override
+  String get privacyAdsBody =>
+      '应用免费,只会显示一条来自 Google AdMob 的小横幅广告。Google 可能会使用你设备的广告 ID 来展示广告。在法律要求的地区,我们会先征求你的同意,你之后也可以随时在“设置”中更改这一选择。你的习惯记录绝不会分享给广告商。';
+
+  @override
+  String get settingsAdChoices => '广告隐私选项';
+
+  @override
+  String get settingsAdChoicesSummary => '查看或更改你对广告的同意设置。';
 }

@@ -347,7 +347,7 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get privacyNoAccountBody =>
-      'Je hoeft je niet aan te melden. De app verzamelt geen persoonlijke gegevens en heeft geen analyse of sociale functies.';
+      'Je hoeft je niet te registreren. De app heeft geen analyses en geen sociale functies en verzamelt geen eigen persoonsgegevens.';
 
   @override
   String get privacyNotificationsTitle => 'Herinneringen blijven lokaal';
@@ -362,4 +362,18 @@ class AppLocalizationsNl extends AppLocalizations {
   @override
   String get privacyDeleteBody =>
       'Als je een gewoonte verwijdert, worden de check-ins van dit apparaat gewist. Als je de app verwijdert, worden al je gegevens gewist.';
+
+  @override
+  String get privacyAdsTitle => 'Één kleine advertentie';
+
+  @override
+  String get privacyAdsBody =>
+      'De app is gratis en toont één kleine banneradvertentie van Google AdMob. Google kan de advertentie-ID van je apparaat gebruiken om die te tonen. Waar de wet het vereist, word je eerst om toestemming gevraagd, en je kunt die keuze later wijzigen in Instellingen. Je gewoonten worden nooit met adverteerders gedeeld.';
+
+  @override
+  String get settingsAdChoices => 'Advertentieprivacykeuzes';
+
+  @override
+  String get settingsAdChoicesSummary =>
+      'Bekijk of wijzig je toestemming voor de advertentie.';
 }

@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:habit_recovery/features/today/domain/check_in_status.dart';
@@ -81,9 +80,14 @@ void main() {
       await tester.pumpAndSettle();
       await tester.tap(find.byIcon(Icons.lock_outline));
       await tester.pumpAndSettle();
-      expect(find.text(AppLocalizations.of(
-        tester.element(find.byType(Scaffold).first),
-      ).privacyTitle), findsWidgets);
+      expect(
+        find.text(
+          AppLocalizations.of(
+            tester.element(find.byType(Scaffold).first),
+          ).privacyTitle,
+        ),
+        findsWidgets,
+      );
       await tester.tap(find.byType(BackButton));
       await tester.pumpAndSettle();
 

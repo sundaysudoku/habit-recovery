@@ -92,9 +92,13 @@
   "privacyStoredTitle": "Nur auf deinem Gerät gespeichert",
   "privacyStoredBody": "Deine Gewohnheiten, Zeitpläne und Check-ins werden in einer Datenbank auf diesem Gerät gespeichert. Sie werden nirgendwohin hochgeladen.",
   "privacyNoAccountTitle": "Kein Konto, kein Tracking",
-  "privacyNoAccountBody": "Du musst dich nicht registrieren. Die App sammelt keine persönlichen Daten und hat weder Analysen noch soziale Funktionen.",
+  "privacyNoAccountBody": "Du musst dich nicht registrieren. Die App hat weder Analysen noch soziale Funktionen und sammelt keine eigenen persönlichen Daten.",
   "privacyNotificationsTitle": "Erinnerungen bleiben lokal",
   "privacyNotificationsBody": "Erinnerungen werden von deinem Handy selbst geplant. Es wird nichts von einem Server gesendet.",
   "privacyDeleteTitle": "Du hast die Kontrolle",
-  "privacyDeleteBody": "Wenn du eine Gewohnheit löschst, werden ihre Check-ins von diesem Gerät entfernt. Wenn du die App deinstallierst, werden alle deine Daten entfernt."
+  "privacyDeleteBody": "Wenn du eine Gewohnheit löschst, werden ihre Check-ins von diesem Gerät entfernt. Wenn du die App deinstallierst, werden alle deine Daten entfernt.",
+  "privacyAdsTitle": "Eine kleine Anzeige",
+  "privacyAdsBody": "Die App ist kostenlos und zeigt ein einzelnes kleines Banner von Google AdMob. Google kann dafür die Werbe-ID deines Geräts verwenden. Wo das Gesetz es verlangt, wirst du vorher um deine Einwilligung gebeten, und du kannst diese Entscheidung später in den Einstellungen ändern. Deine Gewohnheiten werden nie mit Werbetreibenden geteilt.",
+  "settingsAdChoices": "Datenschutzoptionen für Werbung",
+  "settingsAdChoicesSummary": "Deine Einwilligung für die Anzeige ansehen oder ändern."
 }

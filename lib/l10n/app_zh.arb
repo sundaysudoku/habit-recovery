@@ -92,9 +92,13 @@
   "privacyStoredTitle": "仅存储在你的设备上",
   "privacyStoredBody": "你的习惯、安排和打卡记录保存在这台设备的数据库中,绝不会上传到任何地方。",
   "privacyNoAccountTitle": "无需账号,无追踪",
-  "privacyNoAccountBody": "你不需要注册。应用不收集个人数据,也没有数据分析或社交功能。",
+  "privacyNoAccountBody": "你不需要注册。应用没有数据分析和社交功能,也不会自行收集任何个人数据。",
   "privacyNotificationsTitle": "提醒只在本地",
   "privacyNotificationsBody": "提醒由你的手机自己安排,不会从服务器发送任何内容。",
   "privacyDeleteTitle": "一切由你掌控",
-  "privacyDeleteBody": "删除习惯会从这台设备上移除它的打卡记录。卸载应用会移除你的所有数据。"
+  "privacyDeleteBody": "删除习惯会从这台设备上移除它的打卡记录。卸载应用会移除你的所有数据。",
+  "privacyAdsTitle": "一则小广告",
+  "privacyAdsBody": "应用免费,只会显示一条来自 Google AdMob 的小横幅广告。Google 可能会使用你设备的广告 ID 来展示广告。在法律要求的地区,我们会先征求你的同意,你之后也可以随时在“设置”中更改这一选择。你的习惯记录绝不会分享给广告商。",
+  "settingsAdChoices": "广告隐私选项",
+  "settingsAdChoicesSummary": "查看或更改你对广告的同意设置。"
 }

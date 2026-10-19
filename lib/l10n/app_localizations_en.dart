@@ -343,7 +343,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get privacyNoAccountBody =>
-      'You do not need to sign up. The app does not collect personal data and has no analytics or social features.';
+      'You do not need to sign up. The app has no analytics and no social features, and collects no personal data of its own.';
 
   @override
   String get privacyNotificationsTitle => 'Reminders stay local';
@@ -358,4 +358,18 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get privacyDeleteBody =>
       'Deleting a habit removes its check-ins from this device. Uninstalling the app removes all of your data.';
+
+  @override
+  String get privacyAdsTitle => 'One small ad';
+
+  @override
+  String get privacyAdsBody =>
+      'The app is free and shows a single small banner ad from Google AdMob. Google may use your device\'s advertising ID to show it. Where the law requires, you are asked for consent first, and you can change that choice later in Settings. Your habits are never shared with advertisers.';
+
+  @override
+  String get settingsAdChoices => 'Ad privacy choices';
+
+  @override
+  String get settingsAdChoicesSummary =>
+      'Review or change your consent for the ad.';
 }

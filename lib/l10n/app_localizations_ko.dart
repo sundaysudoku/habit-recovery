@@ -333,7 +333,7 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get privacyNoAccountBody =>
-      '가입할 필요가 없어요. 앱은 개인 정보를 수집하지 않으며 분석이나 소셜 기능도 없어요.';
+      '가입할 필요가 없어요. 앱에는 분석이나 소셜 기능이 없고, 앱이 직접 개인 정보를 수집하지도 않아요.';
 
   @override
   String get privacyNotificationsTitle => '알림은 기기 안에서만';
@@ -348,4 +348,17 @@ class AppLocalizationsKo extends AppLocalizations {
   @override
   String get privacyDeleteBody =>
       '습관을 삭제하면 이 기기에서 해당 체크인 기록이 지워져요. 앱을 삭제하면 모든 데이터가 지워져요.';
+
+  @override
+  String get privacyAdsTitle => '작은 광고 하나';
+
+  @override
+  String get privacyAdsBody =>
+      '이 앱은 무료이며 Google AdMob의 작은 배너 광고를 하나만 보여 드려요. Google은 광고를 보여 주기 위해 기기의 광고 ID를 사용할 수 있어요. 법에서 요구하는 경우에는 먼저 동의를 여쭙고, 이 선택은 나중에 설정에서 언제든 바꿀 수 있어요. 당신의 습관 기록은 광고주에게 절대 공유되지 않아요.';
+
+  @override
+  String get settingsAdChoices => '광고 개인정보 선택';
+
+  @override
+  String get settingsAdChoicesSummary => '광고에 대한 동의를 확인하거나 변경해요.';
 }

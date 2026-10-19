@@ -345,7 +345,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get privacyNoAccountBody =>
-      'لا حاجة إلى التسجيل. لا يجمع التطبيق بيانات شخصية، وليس فيه تحليلات أو ميزات اجتماعية.';
+      'لا تحتاج إلى التسجيل. لا يحتوي التطبيق على تحليلات ولا ميزات اجتماعية، ولا يجمع أي بيانات شخصية من تلقاء نفسه.';
 
   @override
   String get privacyNotificationsTitle => 'التذكيرات تبقى محلية';
@@ -360,4 +360,17 @@ class AppLocalizationsAr extends AppLocalizations {
   @override
   String get privacyDeleteBody =>
       'حذف عادة يزيل تسجيلاتها من هذا الجهاز. وإزالة التطبيق تحذف جميع بياناتك.';
+
+  @override
+  String get privacyAdsTitle => 'إعلان صغير واحد';
+
+  @override
+  String get privacyAdsBody =>
+      'التطبيق مجاني ويعرض إعلانًا صغيرًا واحدًا من Google AdMob. قد تستخدم Google معرّف الإعلانات في جهازك لعرضه. وحيثما يشترط القانون، يُطلب موافقتك أولًا، ويمكنك تغيير هذا الاختيار لاحقًا من الإعدادات. لا تتم مشاركة عاداتك مع المعلنين أبدًا.';
+
+  @override
+  String get settingsAdChoices => 'خيارات خصوصية الإعلانات';
+
+  @override
+  String get settingsAdChoicesSummary => 'راجع موافقتك على الإعلان أو غيّرها.';
 }

@@ -348,7 +348,7 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get privacyNoAccountBody =>
-      'Kamu tidak perlu mendaftar. Aplikasi ini tidak mengumpulkan data pribadi dan tidak memiliki analitik atau fitur sosial.';
+      'Kamu tidak perlu mendaftar. Aplikasi ini tidak memiliki analitik maupun fitur sosial, dan tidak mengumpulkan data pribadi apa pun sendiri.';
 
   @override
   String get privacyNotificationsTitle => 'Pengingat tetap lokal';
@@ -363,4 +363,18 @@ class AppLocalizationsId extends AppLocalizations {
   @override
   String get privacyDeleteBody =>
       'Menghapus kebiasaan akan menghapus catatannya dari perangkat ini. Menghapus aplikasi akan menghapus semua datamu.';
+
+  @override
+  String get privacyAdsTitle => 'Satu iklan kecil';
+
+  @override
+  String get privacyAdsBody =>
+      'Aplikasi ini gratis dan hanya menampilkan satu iklan banner kecil dari Google AdMob. Google dapat menggunakan ID iklan perangkatmu untuk menampilkannya. Jika diwajibkan oleh hukum, kamu akan dimintai persetujuan terlebih dahulu, dan pilihan itu bisa kamu ubah kapan saja di Pengaturan. Kebiasaanmu tidak pernah dibagikan kepada pengiklan.';
+
+  @override
+  String get settingsAdChoices => 'Pilihan privasi iklan';
+
+  @override
+  String get settingsAdChoicesSummary =>
+      'Tinjau atau ubah persetujuanmu untuk iklan.';
 }

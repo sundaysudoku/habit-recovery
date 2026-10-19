@@ -348,7 +348,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get privacyNoAccountBody =>
-      'Регистрация не нужна. Приложение не собирает личные данные, в нём нет аналитики и социальных функций.';
+      'Регистрация не нужна. В приложении нет аналитики и социальных функций, и оно не собирает никаких личных данных само.';
 
   @override
   String get privacyNotificationsTitle => 'Напоминания остаются локальными';
@@ -363,4 +363,18 @@ class AppLocalizationsRu extends AppLocalizations {
   @override
   String get privacyDeleteBody =>
       'Удаление привычки стирает её отметки с этого устройства. Удаление приложения стирает все ваши данные.';
+
+  @override
+  String get privacyAdsTitle => 'Одна небольшая реклама';
+
+  @override
+  String get privacyAdsBody =>
+      'Приложение бесплатное и показывает один небольшой баннер Google AdMob. Для этого Google может использовать рекламный идентификатор вашего устройства. Где это требует закон, сначала мы спросим ваше согласие, и позже вы сможете изменить выбор в настройках. Ваши привычки никогда не передаются рекламодателям.';
+
+  @override
+  String get settingsAdChoices => 'Настройки рекламной конфиденциальности';
+
+  @override
+  String get settingsAdChoicesSummary =>
+      'Посмотрите или измените своё согласие на рекламу.';
 }

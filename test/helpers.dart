@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:habit_recovery/app/app.dart';
+import 'package:habit_recovery/core/ads/ads_providers.dart';
+import 'package:habit_recovery/core/ads/ads_service.dart';
 import 'package:habit_recovery/core/database/app_database.dart';
 import 'package:habit_recovery/core/database/database_provider.dart';
 import 'package:habit_recovery/core/preferences/app_preferences.dart';
@@ -76,6 +78,7 @@ Future<AppDatabase> pumpApp(
   DateTime? now,
   AppDatabase? database,
   ReminderScheduler? scheduler,
+  AdsService? ads,
   Map<String, Object> prefsValues = const {},
 }) async {
   await initializeDateFormatting();
@@ -92,6 +95,7 @@ Future<AppDatabase> pumpApp(
         sharedPreferencesProvider.overrideWithValue(prefs),
         databaseProvider.overrideWithValue(db),
         clockProvider.overrideWithValue(() => now ?? testNow),
+        adsServiceProvider.overrideWithValue(ads ?? const NoAdsService()),
         reminderSchedulerProvider.overrideWithValue(
           scheduler ?? FakeReminderScheduler(),
         ),

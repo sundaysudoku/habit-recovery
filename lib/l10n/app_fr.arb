@@ -92,9 +92,13 @@
   "privacyStoredTitle": "Stocké uniquement sur votre appareil",
   "privacyStoredBody": "Vos habitudes, plannings et suivis sont enregistrés dans une base de données sur cet appareil. Ils ne sont jamais envoyés ailleurs.",
   "privacyNoAccountTitle": "Pas de compte, pas de suivi",
-  "privacyNoAccountBody": "Vous n'avez pas besoin de vous inscrire. L'appli ne collecte aucune donnée personnelle et n'a ni analyses ni fonctions sociales.",
+  "privacyNoAccountBody": "Vous n'avez pas besoin de créer de compte. L'app n'a ni outils d'analyse ni fonctions sociales, et ne collecte aucune donnée personnelle qui lui soit propre.",
   "privacyNotificationsTitle": "Les rappels restent locaux",
   "privacyNotificationsBody": "Les rappels sont programmés par votre téléphone lui-même. Rien n'est envoyé depuis un serveur.",
   "privacyDeleteTitle": "Vous gardez le contrôle",
-  "privacyDeleteBody": "Supprimer une habitude efface ses suivis de cet appareil. Désinstaller l'appli efface toutes vos données."
+  "privacyDeleteBody": "Supprimer une habitude efface ses suivis de cet appareil. Désinstaller l'appli efface toutes vos données.",
+  "privacyAdsTitle": "Une petite publicité",
+  "privacyAdsBody": "L'app est gratuite et affiche une seule petite bannière publicitaire de Google AdMob. Google peut utiliser l'identifiant publicitaire de votre appareil pour l'afficher. Lorsque la loi l'exige, votre consentement vous est d'abord demandé, et vous pouvez modifier ce choix plus tard dans les Réglages. Vos habitudes ne sont jamais partagées avec les annonceurs.",
+  "settingsAdChoices": "Choix de confidentialité des publicités",
+  "settingsAdChoicesSummary": "Consultez ou modifiez votre consentement pour la publicité."
 }

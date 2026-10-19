@@ -345,7 +345,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get privacyNoAccountBody =>
-      'No necesitas registrarte. La app no recopila datos personales y no tiene analíticas ni funciones sociales.';
+      'No necesitas registrarte. La app no tiene analíticas ni funciones sociales, y no recopila datos personales propios.';
 
   @override
   String get privacyNotificationsTitle => 'Los recordatorios son locales';
@@ -360,4 +360,18 @@ class AppLocalizationsEs extends AppLocalizations {
   @override
   String get privacyDeleteBody =>
       'Eliminar un hábito borra sus registros de este dispositivo. Al desinstalar la app se borran todos tus datos.';
+
+  @override
+  String get privacyAdsTitle => 'Un pequeño anuncio';
+
+  @override
+  String get privacyAdsBody =>
+      'La app es gratuita y muestra un único anuncio de banner pequeño de Google AdMob. Google puede usar el identificador publicitario de tu dispositivo para mostrarlo. Cuando la ley lo exige, primero se te pide tu consentimiento, y puedes cambiar esa decisión más adelante en Ajustes. Tus hábitos nunca se comparten con anunciantes.';
+
+  @override
+  String get settingsAdChoices => 'Opciones de privacidad de anuncios';
+
+  @override
+  String get settingsAdChoicesSummary =>
+      'Revisa o cambia tu consentimiento para el anuncio.';
 }

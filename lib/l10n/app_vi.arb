@@ -92,9 +92,13 @@
   "privacyStoredTitle": "Chỉ lưu trên thiết bị của bạn",
   "privacyStoredBody": "Thói quen, lịch và check-in được lưu trong cơ sở dữ liệu trên thiết bị này. Chúng không bao giờ được tải lên đâu cả.",
   "privacyNoAccountTitle": "Không tài khoản, không theo dõi",
-  "privacyNoAccountBody": "Bạn không cần đăng ký. Ứng dụng không thu thập dữ liệu cá nhân, không có phân tích hay tính năng mạng xã hội.",
+  "privacyNoAccountBody": "Bạn không cần đăng ký. Ứng dụng không có phân tích hay tính năng mạng xã hội, và tự nó không thu thập dữ liệu cá nhân.",
   "privacyNotificationsTitle": "Nhắc nhở nằm ngay trên máy",
   "privacyNotificationsBody": "Nhắc nhở do chính điện thoại của bạn lên lịch. Không có gì được gửi từ máy chủ.",
   "privacyDeleteTitle": "Bạn toàn quyền kiểm soát",
-  "privacyDeleteBody": "Xóa một thói quen sẽ xóa các check-in của nó khỏi thiết bị này. Gỡ ứng dụng sẽ xóa toàn bộ dữ liệu của bạn."
+  "privacyDeleteBody": "Xóa một thói quen sẽ xóa các check-in của nó khỏi thiết bị này. Gỡ ứng dụng sẽ xóa toàn bộ dữ liệu của bạn.",
+  "privacyAdsTitle": "Một quảng cáo nhỏ",
+  "privacyAdsBody": "Ứng dụng miễn phí và chỉ hiển thị một biển quảng cáo nhỏ của Google AdMob. Google có thể dùng mã quảng cáo của thiết bị để hiển thị nó. Khi luật yêu cầu, bạn sẽ được hỏi đồng ý trước và có thể đổi lựa chọn sau trong Cài đặt. Thói quen của bạn không bao giờ được chia sẻ với nhà quảng cáo.",
+  "settingsAdChoices": "Lựa chọn riêng tư về quảng cáo",
+  "settingsAdChoicesSummary": "Xem hoặc đổi sự đồng ý của bạn với quảng cáo."
 }

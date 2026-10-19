@@ -330,7 +330,7 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get privacyNoAccountBody =>
-      '登録は不要です。アプリは個人データを収集せず、解析機能やソーシャル機能もありません。';
+      '登録は不要です。アプリには解析機能もソーシャル機能もなく、アプリ自身が個人データを収集することもありません。';
 
   @override
   String get privacyNotificationsTitle => 'リマインダーは端末内だけ';
@@ -344,4 +344,17 @@ class AppLocalizationsJa extends AppLocalizations {
   @override
   String get privacyDeleteBody =>
       '習慣を削除すると、その記録がこの端末から消えます。アプリをアンインストールすると、すべてのデータが消えます。';
+
+  @override
+  String get privacyAdsTitle => '小さな広告がひとつ';
+
+  @override
+  String get privacyAdsBody =>
+      'このアプリは無料で、Google AdMob の小さなバナー広告を1つだけ表示します。Google は広告を表示するために、端末の広告 ID を使うことがあります。法律で必要な場合は、先に同意をお願いしていて、その選択は後から設定でいつでも変更できます。あなたの習慣が広告主に共有されることはありません。';
+
+  @override
+  String get settingsAdChoices => '広告のプライバシー設定';
+
+  @override
+  String get settingsAdChoicesSummary => '広告に関する同意を確認または変更できます。';
 }
