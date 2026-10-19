@@ -80,31 +80,17 @@ class _Banner extends StatefulWidget {
   State<_Banner> createState() => _BannerState();
 }
 
+/// The smallest standard AdMob banner (320x50), centered. Kept small on purpose.
 class _BannerState extends State<_Banner> {
-  BannerAd? _ad;
+  late final BannerAd _ad;
   bool _loaded = false;
-  int? _width;
 
   @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    final width = MediaQuery.sizeOf(context).width.truncate();
-    if (width != _width) {
-      _width = width;
-      _load(width);
-    }
-  }
-
-  Future<void> _load(int width) async {
-    final size = await AdSize.getLargeAnchoredAdaptiveBannerAdSize(
-      width,
-    );
-    if (!mounted || size == null) return;
-    _ad?.dispose();
-    setState(() => _loaded = false);
-    final ad = BannerAd(
+  void initState() {
+    super.initState();
+    _ad = BannerAd(
       adUnitId: _bannerUnitId,
-      size: size,
+      size: AdSize.banner,
       request: const AdRequest(),
       listener: BannerAdListener(
         onAdLoaded: (_) {
@@ -112,25 +98,22 @@ class _BannerState extends State<_Banner> {
         },
         onAdFailedToLoad: (ad, _) => ad.dispose(),
       ),
-    );
-    _ad = ad;
-    await ad.load();
+    )..load();
   }
 
   @override
   void dispose() {
-    _ad?.dispose();
+    _ad.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    final ad = _ad;
-    if (!_loaded || ad == null) return const SizedBox.shrink();
+    if (!_loaded) return const SizedBox.shrink();
     return SizedBox(
-      width: ad.size.width.toDouble(),
-      height: ad.size.height.toDouble(),
-      child: AdWidget(ad: ad),
+      width: AdSize.banner.width.toDouble(),
+      height: AdSize.banner.height.toDouble(),
+      child: AdWidget(ad: _ad),
     );
   }
 }
