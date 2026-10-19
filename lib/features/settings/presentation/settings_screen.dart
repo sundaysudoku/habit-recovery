@@ -4,8 +4,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../l10n/app_localizations.dart';
 import '../../reminders/data/reminder_providers.dart';
 import '../../reminders/presentation/notification_permission.dart';
+import 'privacy_screen.dart';
 
-/// Privacy details arrive in Phase 6.
 class SettingsScreen extends ConsumerWidget {
   const SettingsScreen({super.key});
 
@@ -48,6 +48,10 @@ class SettingsScreen extends ConsumerWidget {
             leading: const Icon(Icons.lock_outline),
             title: Text(l10n.settingsPrivacy),
             subtitle: Text(l10n.settingsPrivacySummary),
+            trailing: const Icon(Icons.chevron_right),
+            onTap: () => Navigator.of(context).push(
+              MaterialPageRoute<void>(builder: (_) => const PrivacyScreen()),
+            ),
           ),
         ],
       ),

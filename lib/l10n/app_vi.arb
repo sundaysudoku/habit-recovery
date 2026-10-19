@@ -86,5 +86,15 @@
   "remindersUnsupported": "Nhắc nhở hoạt động trên app Android, không có trong bản xem thử này.",
   "notificationsOffTitle": "Thông báo đang tắt",
   "notificationsOffBody": "Không sao, app vẫn dùng bình thường. Nếu sau này muốn nhận nhắc nhở, hãy mở Cài đặt của điện thoại > Ứng dụng > Habit Recovery > Thông báo và bật lên.",
-  "actionOk": "OK"
+  "actionOk": "OK",
+  "privacyTitle": "Quyền riêng tư",
+  "privacyIntro": "Habit Recovery được thiết kế để giữ kín các thói quen của bạn.",
+  "privacyStoredTitle": "Chỉ lưu trên thiết bị của bạn",
+  "privacyStoredBody": "Thói quen, lịch và check-in được lưu trong cơ sở dữ liệu trên thiết bị này. Chúng không bao giờ được tải lên đâu cả.",
+  "privacyNoAccountTitle": "Không tài khoản, không theo dõi",
+  "privacyNoAccountBody": "Bạn không cần đăng ký. Ứng dụng không thu thập dữ liệu cá nhân, không có phân tích hay tính năng mạng xã hội.",
+  "privacyNotificationsTitle": "Nhắc nhở nằm ngay trên máy",
+  "privacyNotificationsBody": "Nhắc nhở do chính điện thoại của bạn lên lịch. Không có gì được gửi từ máy chủ.",
+  "privacyDeleteTitle": "Bạn toàn quyền kiểm soát",
+  "privacyDeleteBody": "Xóa một thói quen sẽ xóa các check-in của nó khỏi thiết bị này. Gỡ ứng dụng sẽ xóa toàn bộ dữ liệu của bạn."
 }

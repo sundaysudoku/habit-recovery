@@ -324,4 +324,39 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get actionOk => 'OK';
+
+  @override
+  String get privacyTitle => 'Quyền riêng tư';
+
+  @override
+  String get privacyIntro =>
+      'Habit Recovery được thiết kế để giữ kín các thói quen của bạn.';
+
+  @override
+  String get privacyStoredTitle => 'Chỉ lưu trên thiết bị của bạn';
+
+  @override
+  String get privacyStoredBody =>
+      'Thói quen, lịch và check-in được lưu trong cơ sở dữ liệu trên thiết bị này. Chúng không bao giờ được tải lên đâu cả.';
+
+  @override
+  String get privacyNoAccountTitle => 'Không tài khoản, không theo dõi';
+
+  @override
+  String get privacyNoAccountBody =>
+      'Bạn không cần đăng ký. Ứng dụng không thu thập dữ liệu cá nhân, không có phân tích hay tính năng mạng xã hội.';
+
+  @override
+  String get privacyNotificationsTitle => 'Nhắc nhở nằm ngay trên máy';
+
+  @override
+  String get privacyNotificationsBody =>
+      'Nhắc nhở do chính điện thoại của bạn lên lịch. Không có gì được gửi từ máy chủ.';
+
+  @override
+  String get privacyDeleteTitle => 'Bạn toàn quyền kiểm soát';
+
+  @override
+  String get privacyDeleteBody =>
+      'Xóa một thói quen sẽ xóa các check-in của nó khỏi thiết bị này. Gỡ ứng dụng sẽ xóa toàn bộ dữ liệu của bạn.';
 }

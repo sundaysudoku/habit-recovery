@@ -323,4 +323,39 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get actionOk => 'OK';
+
+  @override
+  String get privacyTitle => 'Privacy';
+
+  @override
+  String get privacyIntro =>
+      'Habit Recovery is built to keep your habits private.';
+
+  @override
+  String get privacyStoredTitle => 'Stored only on your device';
+
+  @override
+  String get privacyStoredBody =>
+      'Your habits, schedules and check-ins are saved in a database on this device. They are never uploaded anywhere.';
+
+  @override
+  String get privacyNoAccountTitle => 'No account, no tracking';
+
+  @override
+  String get privacyNoAccountBody =>
+      'You do not need to sign up. The app does not collect personal data and has no analytics or social features.';
+
+  @override
+  String get privacyNotificationsTitle => 'Reminders stay local';
+
+  @override
+  String get privacyNotificationsBody =>
+      'Reminders are scheduled by your phone itself. Nothing is sent from a server.';
+
+  @override
+  String get privacyDeleteTitle => 'You are in control';
+
+  @override
+  String get privacyDeleteBody =>
+      'Deleting a habit removes its check-ins from this device. Uninstalling the app removes all of your data.';
 }

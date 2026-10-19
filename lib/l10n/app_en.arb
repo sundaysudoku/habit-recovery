@@ -231,5 +231,15 @@
   "remindersUnsupported": "Reminders work in the Android app. They are not available in this preview.",
   "notificationsOffTitle": "Notifications are off",
   "notificationsOffBody": "That's fine, the app works without them. If you want reminders later, open your phone's Settings > Apps > Habit Recovery > Notifications and turn them on.",
-  "actionOk": "OK"
+  "actionOk": "OK",
+  "privacyTitle": "Privacy",
+  "privacyIntro": "Habit Recovery is built to keep your habits private.",
+  "privacyStoredTitle": "Stored only on your device",
+  "privacyStoredBody": "Your habits, schedules and check-ins are saved in a database on this device. They are never uploaded anywhere.",
+  "privacyNoAccountTitle": "No account, no tracking",
+  "privacyNoAccountBody": "You do not need to sign up. The app does not collect personal data and has no analytics or social features.",
+  "privacyNotificationsTitle": "Reminders stay local",
+  "privacyNotificationsBody": "Reminders are scheduled by your phone itself. Nothing is sent from a server.",
+  "privacyDeleteTitle": "You are in control",
+  "privacyDeleteBody": "Deleting a habit removes its check-ins from this device. Uninstalling the app removes all of your data."
 }
