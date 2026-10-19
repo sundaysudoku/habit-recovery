@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../core/preferences/app_preferences.dart';
 import '../features/onboarding/presentation/onboarding_screen.dart';
+import '../features/reminders/presentation/reminder_sync.dart';
 import '../l10n/app_localizations.dart';
 import 'home_shell.dart';
 import 'theme.dart';
@@ -23,7 +24,9 @@ class HabitRecoveryApp extends ConsumerWidget {
       locale: locale,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      home: onboardingComplete ? const HomeShell() : const OnboardingScreen(),
+      home: onboardingComplete
+          ? const ReminderSync(child: HomeShell())
+          : const OnboardingScreen(),
     );
   }
 }

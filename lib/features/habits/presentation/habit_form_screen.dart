@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../l10n/app_localizations.dart';
+import '../../reminders/presentation/notification_permission.dart';
 import '../data/habit_repository.dart';
 import '../domain/habit.dart';
 import '../domain/weekday_schedule.dart';
@@ -261,6 +262,7 @@ class _HabitFormScreenState extends ConsumerState<HabitFormScreen> {
               onChanged: (on) {
                 if (on) {
                   _pickReminder();
+                  ensureNotificationPermission(context, ref);
                 } else {
                   setState(() => _reminderMinutes = null);
                 }

@@ -26,7 +26,6 @@
   "settingsReminders": "Nhắc nhở",
   "settingsPrivacy": "Quyền riêng tư",
   "settingsPrivacySummary": "Dữ liệu của bạn chỉ được lưu trên máy này.",
-  "settingsRemindersSoon": "Tính năng nhắc nhở sẽ có trong bản cập nhật sau.",
   "habitsArchived": "Đã lưu trữ ({count})",
   "todayNoHabits": "Thêm một thói quen để bắt đầu. Nhỏ thôi cũng được.",
   "todayNothingScheduled": "Hôm nay không có lịch. Nghỉ ngơi cũng là một phần của kế hoạch.",
@@ -77,5 +76,15 @@
   "progressEncourageSmall": "Những bước nhỏ giữ cho thói quen sống. Làm tốt lắm.",
   "progressEncourageAny": "Mỗi lần bạn có mặt đều đáng ghi nhận.",
   "progressEncourageStart": "Lúc nào cũng có thể bắt đầu lại. Một bước nhỏ là đủ.",
-  "progressDaySemantics": "{date}: {normal} trọn mục tiêu, {smaller} bước nhỏ, {missed} chưa làm"
+  "progressDaySemantics": "{date}: {normal} trọn mục tiêu, {smaller} bước nhỏ, {missed} chưa làm",
+  "reminderChannelName": "Nhắc nhở thói quen",
+  "reminderChannelDescription": "Lời nhắc nhẹ nhàng vào giờ bạn chọn cho từng thói quen.",
+  "reminderBody": "Đến giờ cho {target} rồi. {smallerTarget} thôi cũng được tính.",
+  "reminderBodyFocusSmaller": "Đến giờ cho {smallerTarget} rồi. Bước nhỏ cũng đáng ghi nhận.",
+  "remindersSummary": "Nhắc nhở đến vào giờ đặt ở từng thói quen, chỉ vào những ngày có lịch.",
+  "remindersPermissionDenied": "Thông báo của app đang bị tắt. Bật lại trong Cài đặt của điện thoại > Ứng dụng > Habit Recovery > Thông báo.",
+  "remindersUnsupported": "Nhắc nhở hoạt động trên app Android, không có trong bản xem thử này.",
+  "notificationsOffTitle": "Thông báo đang tắt",
+  "notificationsOffBody": "Không sao, app vẫn dùng bình thường. Nếu sau này muốn nhận nhắc nhở, hãy mở Cài đặt của điện thoại > Ứng dụng > Habit Recovery > Thông báo và bật lên.",
+  "actionOk": "OK"
 }

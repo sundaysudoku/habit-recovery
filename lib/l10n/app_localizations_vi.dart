@@ -96,10 +96,6 @@ class AppLocalizationsVi extends AppLocalizations {
       'Dữ liệu của bạn chỉ được lưu trên máy này.';
 
   @override
-  String get settingsRemindersSoon =>
-      'Tính năng nhắc nhở sẽ có trong bản cập nhật sau.';
-
-  @override
   String habitsArchived(int count) {
     return 'Đã lưu trữ ($count)';
   }
@@ -289,4 +285,43 @@ class AppLocalizationsVi extends AppLocalizations {
   ) {
     return '$date: $normal trọn mục tiêu, $smaller bước nhỏ, $missed chưa làm';
   }
+
+  @override
+  String get reminderChannelName => 'Nhắc nhở thói quen';
+
+  @override
+  String get reminderChannelDescription =>
+      'Lời nhắc nhẹ nhàng vào giờ bạn chọn cho từng thói quen.';
+
+  @override
+  String reminderBody(String target, String smallerTarget) {
+    return 'Đến giờ cho $target rồi. $smallerTarget thôi cũng được tính.';
+  }
+
+  @override
+  String reminderBodyFocusSmaller(String smallerTarget) {
+    return 'Đến giờ cho $smallerTarget rồi. Bước nhỏ cũng đáng ghi nhận.';
+  }
+
+  @override
+  String get remindersSummary =>
+      'Nhắc nhở đến vào giờ đặt ở từng thói quen, chỉ vào những ngày có lịch.';
+
+  @override
+  String get remindersPermissionDenied =>
+      'Thông báo của app đang bị tắt. Bật lại trong Cài đặt của điện thoại > Ứng dụng > Habit Recovery > Thông báo.';
+
+  @override
+  String get remindersUnsupported =>
+      'Nhắc nhở hoạt động trên app Android, không có trong bản xem thử này.';
+
+  @override
+  String get notificationsOffTitle => 'Thông báo đang tắt';
+
+  @override
+  String get notificationsOffBody =>
+      'Không sao, app vẫn dùng bình thường. Nếu sau này muốn nhận nhắc nhở, hãy mở Cài đặt của điện thoại > Ứng dụng > Habit Recovery > Thông báo và bật lên.';
+
+  @override
+  String get actionOk => 'OK';
 }

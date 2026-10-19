@@ -60,7 +60,6 @@
   "settingsReminders": "Reminders",
   "settingsPrivacy": "Privacy",
   "settingsPrivacySummary": "Your data is stored only on this device.",
-  "settingsRemindersSoon": "Reminders will be available in a later update.",
   "habitsArchived": "Archived ({count})",
   "@habitsArchived": {
     "placeholders": {
@@ -204,5 +203,33 @@
         "type": "int"
       }
     }
-  }
+  },
+  "reminderChannelName": "Habit reminders",
+  "reminderChannelDescription": "Gentle reminders at the times you chose for your habits.",
+  "reminderBody": "A good time for {target}. Even {smallerTarget} counts.",
+  "@reminderBody": {
+    "description": "Notification text. Gentle, never pushy.",
+    "placeholders": {
+      "target": {
+        "type": "String"
+      },
+      "smallerTarget": {
+        "type": "String"
+      }
+    }
+  },
+  "reminderBodyFocusSmaller": "A good time for {smallerTarget}. Small steps count.",
+  "@reminderBodyFocusSmaller": {
+    "placeholders": {
+      "smallerTarget": {
+        "type": "String"
+      }
+    }
+  },
+  "remindersSummary": "Reminders arrive at the time set on each habit, only on its scheduled days.",
+  "remindersPermissionDenied": "Notifications are turned off for this app. Turn them on in your phone's Settings > Apps > Habit Recovery > Notifications.",
+  "remindersUnsupported": "Reminders work in the Android app. They are not available in this preview.",
+  "notificationsOffTitle": "Notifications are off",
+  "notificationsOffBody": "That's fine, the app works without them. If you want reminders later, open your phone's Settings > Apps > Habit Recovery > Notifications and turn them on.",
+  "actionOk": "OK"
 }

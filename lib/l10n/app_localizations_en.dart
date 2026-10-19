@@ -96,10 +96,6 @@ class AppLocalizationsEn extends AppLocalizations {
       'Your data is stored only on this device.';
 
   @override
-  String get settingsRemindersSoon =>
-      'Reminders will be available in a later update.';
-
-  @override
   String habitsArchived(int count) {
     return 'Archived ($count)';
   }
@@ -288,4 +284,43 @@ class AppLocalizationsEn extends AppLocalizations {
   ) {
     return '$date: $normal full, $smaller small steps, $missed not done';
   }
+
+  @override
+  String get reminderChannelName => 'Habit reminders';
+
+  @override
+  String get reminderChannelDescription =>
+      'Gentle reminders at the times you chose for your habits.';
+
+  @override
+  String reminderBody(String target, String smallerTarget) {
+    return 'A good time for $target. Even $smallerTarget counts.';
+  }
+
+  @override
+  String reminderBodyFocusSmaller(String smallerTarget) {
+    return 'A good time for $smallerTarget. Small steps count.';
+  }
+
+  @override
+  String get remindersSummary =>
+      'Reminders arrive at the time set on each habit, only on its scheduled days.';
+
+  @override
+  String get remindersPermissionDenied =>
+      'Notifications are turned off for this app. Turn them on in your phone\'s Settings > Apps > Habit Recovery > Notifications.';
+
+  @override
+  String get remindersUnsupported =>
+      'Reminders work in the Android app. They are not available in this preview.';
+
+  @override
+  String get notificationsOffTitle => 'Notifications are off';
+
+  @override
+  String get notificationsOffBody =>
+      'That\'s fine, the app works without them. If you want reminders later, open your phone\'s Settings > Apps > Habit Recovery > Notifications and turn them on.';
+
+  @override
+  String get actionOk => 'OK';
 }

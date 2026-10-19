@@ -254,12 +254,6 @@ abstract class AppLocalizations {
   /// **'Your data is stored only on this device.'**
   String get settingsPrivacySummary;
 
-  /// No description provided for @settingsRemindersSoon.
-  ///
-  /// In en, this message translates to:
-  /// **'Reminders will be available in a later update.'**
-  String get settingsRemindersSoon;
-
   /// No description provided for @habitsArchived.
   ///
   /// In en, this message translates to:
@@ -565,6 +559,66 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'{date}: {normal} full, {smaller} small steps, {missed} not done'**
   String progressDaySemantics(String date, int normal, int smaller, int missed);
+
+  /// No description provided for @reminderChannelName.
+  ///
+  /// In en, this message translates to:
+  /// **'Habit reminders'**
+  String get reminderChannelName;
+
+  /// No description provided for @reminderChannelDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Gentle reminders at the times you chose for your habits.'**
+  String get reminderChannelDescription;
+
+  /// Notification text. Gentle, never pushy.
+  ///
+  /// In en, this message translates to:
+  /// **'A good time for {target}. Even {smallerTarget} counts.'**
+  String reminderBody(String target, String smallerTarget);
+
+  /// No description provided for @reminderBodyFocusSmaller.
+  ///
+  /// In en, this message translates to:
+  /// **'A good time for {smallerTarget}. Small steps count.'**
+  String reminderBodyFocusSmaller(String smallerTarget);
+
+  /// No description provided for @remindersSummary.
+  ///
+  /// In en, this message translates to:
+  /// **'Reminders arrive at the time set on each habit, only on its scheduled days.'**
+  String get remindersSummary;
+
+  /// No description provided for @remindersPermissionDenied.
+  ///
+  /// In en, this message translates to:
+  /// **'Notifications are turned off for this app. Turn them on in your phone\'s Settings > Apps > Habit Recovery > Notifications.'**
+  String get remindersPermissionDenied;
+
+  /// No description provided for @remindersUnsupported.
+  ///
+  /// In en, this message translates to:
+  /// **'Reminders work in the Android app. They are not available in this preview.'**
+  String get remindersUnsupported;
+
+  /// No description provided for @notificationsOffTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Notifications are off'**
+  String get notificationsOffTitle;
+
+  /// No description provided for @notificationsOffBody.
+  ///
+  /// In en, this message translates to:
+  /// **'That\'s fine, the app works without them. If you want reminders later, open your phone\'s Settings > Apps > Habit Recovery > Notifications and turn them on.'**
+  String get notificationsOffBody;
+
+  /// No description provided for @actionOk.
+  ///
+  /// In en, this message translates to:
+  /// **'OK'**
+  String get actionOk;
 }
 
 class _AppLocalizationsDelegate
