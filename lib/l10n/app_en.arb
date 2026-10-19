@@ -1,0 +1,11 @@
+{
+  "@@locale": "en",
+  "appTitle": "Habit Recovery",
+  "@appTitle": {
+    "description": "Name of the app, shown in the app bar."
+  },
+  "todayPlaceholder": "Small steps count. Your habits will appear here.",
+  "@todayPlaceholder": {
+    "description": "Temporary message on the Today screen before habits exist."
+  }
+}
