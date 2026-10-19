@@ -20,19 +20,20 @@ Future<void> _openTab(WidgetTester tester, int index) async {
 
 void main() {
   test('the app supports exactly the 20 planned languages', () {
-    final codes = AppLocalizations.supportedLocales
-        .map((l) => l.languageCode)
+    final tags = AppLocalizations.supportedLocales
+        .map((l) => l.toLanguageTag())
         .toSet();
-    expect(codes, {
-      'en', 'vi', 'es', 'pt', 'fr', 'de', 'it', 'nl', 'ru', 'pl', //
-      'tr', 'ar', 'ur', 'hi', 'zh', 'ja', 'ko', 'id', 'th', 'bn',
+    expect(tags, {
+      'en', 'es', 'pt', 'hi', 'ar', 'fr', 'id', 'de', 'ja', 'ko', //
+      'tr', 'vi', 'th', 'it', 'ru', 'bn', 'ur', 'zh', 'zh-Hant', 'pl',
     });
   });
 
   for (final locale in AppLocalizations.supportedLocales) {
     final code = locale.languageCode;
+    final tag = locale.toLanguageTag();
 
-    testWidgets('$code: every screen renders without overflow at 2x text on a '
+    testWidgets('$tag: every screen renders without overflow at 2x text on a '
         'small phone', (tester) async {
       tester.view.physicalSize = const Size(360, 640);
       tester.view.devicePixelRatio = 1;
@@ -48,7 +49,7 @@ void main() {
       await seedHabit(db, checkIns: {3: CheckInStatus.normal});
       await pumpApp(
         tester,
-        locale: Locale(code),
+        locale: locale,
         onboardingComplete: true,
         database: db,
       );

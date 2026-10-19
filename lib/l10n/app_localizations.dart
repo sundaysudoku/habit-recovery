@@ -16,7 +16,6 @@ import 'app_localizations_id.dart';
 import 'app_localizations_it.dart';
 import 'app_localizations_ja.dart';
 import 'app_localizations_ko.dart';
-import 'app_localizations_nl.dart';
 import 'app_localizations_pl.dart';
 import 'app_localizations_pt.dart';
 import 'app_localizations_ru.dart';
@@ -123,7 +122,6 @@ abstract class AppLocalizations {
     Locale('it'),
     Locale('ja'),
     Locale('ko'),
-    Locale('nl'),
     Locale('pl'),
     Locale('pt'),
     Locale('ru'),
@@ -132,6 +130,7 @@ abstract class AppLocalizations {
     Locale('ur'),
     Locale('vi'),
     Locale('zh'),
+    Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hant'),
   ];
 
   /// Name of the app.
@@ -763,7 +762,6 @@ class _AppLocalizationsDelegate
     'it',
     'ja',
     'ko',
-    'nl',
     'pl',
     'pt',
     'ru',
@@ -779,6 +777,18 @@ class _AppLocalizationsDelegate
 }
 
 AppLocalizations lookupAppLocalizations(Locale locale) {
+  // Lookup logic when language+script codes are specified.
+  switch (locale.languageCode) {
+    case 'zh':
+      {
+        switch (locale.scriptCode) {
+          case 'Hant':
+            return AppLocalizationsZhHant();
+        }
+        break;
+      }
+  }
+
   // Lookup logic when only language code is specified.
   switch (locale.languageCode) {
     case 'ar':
@@ -803,8 +813,6 @@ AppLocalizations lookupAppLocalizations(Locale locale) {
       return AppLocalizationsJa();
     case 'ko':
       return AppLocalizationsKo();
-    case 'nl':
-      return AppLocalizationsNl();
     case 'pl':
       return AppLocalizationsPl();
     case 'pt':
