@@ -86,10 +86,6 @@ class AppLocalizationsVi extends AppLocalizations {
   String get progressLast7Days => '7 ngày qua';
 
   @override
-  String get progressPlaceholder =>
-      'Ở đây bạn sẽ thấy những bước nhỏ và những lần quay lại, không chỉ chuỗi ngày liên tiếp.';
-
-  @override
   String get settingsReminders => 'Nhắc nhở';
 
   @override
@@ -190,4 +186,107 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get fieldRequired => 'Vui lòng điền mục này.';
+
+  @override
+  String habitTargetsFocusSmaller(String smallerTarget, String target) {
+    return 'Mục tiêu lúc này: $smallerTarget · Thường: $target';
+  }
+
+  @override
+  String get habitFocusSmallerLabel => 'Tạm dùng mục tiêu nhỏ';
+
+  @override
+  String get habitFocusSmallerHelper =>
+      'Phù hợp khi bắt đầu lại sau thời gian nghỉ. Đổi lại bất cứ lúc nào bạn thấy sẵn sàng.';
+
+  @override
+  String recoveryTitle(String name) {
+    return 'Cùng bắt đầu lại $name nhẹ nhàng nhé';
+  }
+
+  @override
+  String get recoveryBody =>
+      'Vài ngày theo kế hoạch vừa rồi chưa làm được. Không sao cả, ai cũng có lúc như vậy. Bạn muốn tiếp tục thế nào?';
+
+  @override
+  String recoveryUseSmaller(String smallerTarget) {
+    return 'Làm nhỏ lại ($smallerTarget)';
+  }
+
+  @override
+  String get recoveryUseNormal => 'Giữ mục tiêu thường';
+
+  @override
+  String get recoveryChangeSchedule => 'Đổi lịch';
+
+  @override
+  String get recoverySkip => 'Để sau';
+
+  @override
+  String recoverySmallerDone(String smallerTarget) {
+    return 'Lựa chọn hay. $smallerTarget vẫn được tính trọn vẹn.';
+  }
+
+  @override
+  String get recoveryNormalDone => 'Chào mừng bạn quay lại. Bạn làm được mà.';
+
+  @override
+  String get progressLast30Days => '30 ngày qua';
+
+  @override
+  String get progressNoHabits => 'Thêm một thói quen để xem tiến bộ ở đây.';
+
+  @override
+  String progressShowedUp(int showedUp, int planned) {
+    return 'Bạn đã có mặt $showedUp trên $planned lần theo kế hoạch';
+  }
+
+  @override
+  String get progressFullGoal => 'Trọn mục tiêu';
+
+  @override
+  String get progressSmallSteps => 'Bước nhỏ';
+
+  @override
+  String get progressComebacks => 'Lần quay lại';
+
+  @override
+  String get progressNotDone => 'Chưa làm';
+
+  @override
+  String progressHabitCount(int showedUp, int planned) {
+    return '$showedUp/$planned';
+  }
+
+  @override
+  String progressEncourageComebacks(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other:
+          'Bạn đã quay lại sau thời gian nghỉ $count lần. Đó là điều quan trọng nhất.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get progressEncourageSmall =>
+      'Những bước nhỏ giữ cho thói quen sống. Làm tốt lắm.';
+
+  @override
+  String get progressEncourageAny => 'Mỗi lần bạn có mặt đều đáng ghi nhận.';
+
+  @override
+  String get progressEncourageStart =>
+      'Lúc nào cũng có thể bắt đầu lại. Một bước nhỏ là đủ.';
+
+  @override
+  String progressDaySemantics(
+    String date,
+    int normal,
+    int smaller,
+    int missed,
+  ) {
+    return '$date: $normal trọn mục tiêu, $smaller bước nhỏ, $missed chưa làm';
+  }
 }

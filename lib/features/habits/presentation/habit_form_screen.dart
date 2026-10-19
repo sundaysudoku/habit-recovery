@@ -30,6 +30,7 @@ class _HabitFormScreenState extends ConsumerState<HabitFormScreen> {
   late Set<int> _weekdays =
       widget.habit?.schedule.weekdays ?? WeekdaySchedule.daily.weekdays;
   late int? _reminderMinutes = widget.habit?.reminderMinutes;
+  late bool _focusSmaller = widget.habit?.focusSmaller ?? false;
   bool _showDaysError = false;
   bool _saving = false;
 
@@ -58,6 +59,7 @@ class _HabitFormScreenState extends ConsumerState<HabitFormScreen> {
           ? WeekdaySchedule.daily
           : WeekdaySchedule.fromWeekdays(_weekdays),
       reminderMinutes: _reminderMinutes,
+      focusSmaller: _focusSmaller,
     );
     final repo = ref.read(habitRepositoryProvider);
     if (_isEditing) {
@@ -190,6 +192,13 @@ class _HabitFormScreenState extends ConsumerState<HabitFormScreen> {
               ),
               maxLength: 60,
               validator: _required,
+            ),
+            SwitchListTile(
+              contentPadding: EdgeInsets.zero,
+              title: Text(l10n.habitFocusSmallerLabel),
+              subtitle: Text(l10n.habitFocusSmallerHelper),
+              value: _focusSmaller,
+              onChanged: (value) => setState(() => _focusSmaller = value),
             ),
             const SizedBox(height: 24),
             Text(l10n.habitScheduleLabel, style: theme.textTheme.titleSmall),

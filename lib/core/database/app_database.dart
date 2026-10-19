@@ -1,6 +1,8 @@
 import 'package:drift/drift.dart';
 import 'package:drift_flutter/drift_flutter.dart';
 
+import 'app_database.steps.dart';
+
 part 'app_database.g.dart';
 
 @DataClassName('HabitRow')
@@ -16,6 +18,14 @@ class Habits extends Table {
   /// Minutes after local midnight; null means no reminder.
   IntColumn get reminderMinutes => integer().nullable()();
   BoolColumn get archived => boolean().withDefault(const Constant(false))();
+
+  /// Recovery choice: use the smaller target as today's goal for now.
+  /// Added in schema version 2.
+  BoolColumn get focusSmaller => boolean().withDefault(const Constant(false))();
+
+  /// Local date `YYYY-MM-DD` of the last recovery choice; misses on earlier
+  /// days no longer trigger Recovery Mode. Added in schema version 2.
+  TextColumn get recoveryHandledOn => text().nullable()();
 
   /// Local calendar date `YYYY-MM-DD` from which the habit is scheduled.
   TextColumn get startDate => text()();
@@ -47,13 +57,19 @@ class AppDatabase extends _$AppDatabase {
   AppDatabase([QueryExecutor? executor]) : super(executor ?? _openConnection());
 
   @override
-  int get schemaVersion => 1;
+  int get schemaVersion => 2;
 
   @override
   MigrationStrategy get migration => MigrationStrategy(
     onCreate: (m) => m.createAll(),
-    // Future schema changes go here, one step per version, e.g.
-    // onUpgrade: stepByStep(from1To2: (m, schema) async { ... }),
+    // One step per schema version. After changing tables, bump
+    // [schemaVersion] and run `dart run drift_dev make-migrations`.
+    onUpgrade: stepByStep(
+      from1To2: (m, schema) async {
+        await m.addColumn(schema.habits, schema.habits.focusSmaller);
+        await m.addColumn(schema.habits, schema.habits.recoveryHandledOn);
+      },
+    ),
     beforeOpen: (details) async {
       await customStatement('PRAGMA foreign_keys = ON');
     },

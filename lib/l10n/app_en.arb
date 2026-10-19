@@ -57,7 +57,6 @@
   "habitsEmpty": "No habits yet. Tap New habit to add your first one.",
   "habitsAdd": "New habit",
   "progressLast7Days": "Last 7 days",
-  "progressPlaceholder": "Here you will see your small steps and comebacks, not just streaks.",
   "settingsReminders": "Reminders",
   "settingsPrivacy": "Privacy",
   "settingsPrivacySummary": "Your data is stored only on this device.",
@@ -102,5 +101,108 @@
   "actionSave": "Save",
   "actionCancel": "Cancel",
   "actionDelete": "Delete",
-  "fieldRequired": "Please fill this in."
+  "fieldRequired": "Please fill this in.",
+  "habitTargetsFocusSmaller": "Goal for now: {smallerTarget} · Normal: {target}",
+  "@habitTargetsFocusSmaller": {
+    "description": "Shown when the user chose the smaller target during recovery.",
+    "placeholders": {
+      "smallerTarget": {
+        "type": "String"
+      },
+      "target": {
+        "type": "String"
+      }
+    }
+  },
+  "habitFocusSmallerLabel": "Use the smaller goal for now",
+  "habitFocusSmallerHelper": "Good for restarting after a break. Switch back whenever you feel ready.",
+  "recoveryTitle": "Let's restart {name} gently",
+  "@recoveryTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "recoveryBody": "The last couple of planned days didn't happen. That's okay, it happens to everyone. How would you like to continue?",
+  "@recoveryBody": {
+    "description": "Recovery Mode message. Must be warm and free of guilt or blame."
+  },
+  "recoveryUseSmaller": "Make it smaller ({smallerTarget})",
+  "@recoveryUseSmaller": {
+    "placeholders": {
+      "smallerTarget": {
+        "type": "String"
+      }
+    }
+  },
+  "recoveryUseNormal": "Keep the normal goal",
+  "recoveryChangeSchedule": "Change schedule",
+  "recoverySkip": "Not now",
+  "recoverySmallerDone": "Great choice. {smallerTarget} counts fully.",
+  "@recoverySmallerDone": {
+    "placeholders": {
+      "smallerTarget": {
+        "type": "String"
+      }
+    }
+  },
+  "recoveryNormalDone": "Welcome back. You've got this.",
+  "progressLast30Days": "Last 30 days",
+  "progressNoHabits": "Add a habit to see your progress here.",
+  "progressShowedUp": "You showed up {showedUp} of {planned} planned times",
+  "@progressShowedUp": {
+    "placeholders": {
+      "showedUp": {
+        "type": "int"
+      },
+      "planned": {
+        "type": "int"
+      }
+    }
+  },
+  "progressFullGoal": "Full goal",
+  "progressSmallSteps": "Small steps",
+  "progressComebacks": "Comebacks",
+  "progressNotDone": "Not done",
+  "progressHabitCount": "{showedUp}/{planned}",
+  "@progressHabitCount": {
+    "placeholders": {
+      "showedUp": {
+        "type": "int"
+      },
+      "planned": {
+        "type": "int"
+      }
+    }
+  },
+  "progressEncourageComebacks": "{count, plural, =1{You came back after a break once. That matters most.} other{You came back after a break {count} times. That matters most.}}",
+  "@progressEncourageComebacks": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "progressEncourageSmall": "Small steps keep the habit alive. Nice work.",
+  "progressEncourageAny": "Every time you show up counts.",
+  "progressEncourageStart": "A fresh start is always available. One small step is enough.",
+  "progressDaySemantics": "{date}: {normal} full, {smaller} small steps, {missed} not done",
+  "@progressDaySemantics": {
+    "description": "Screen reader label for one day in the progress chart.",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      },
+      "normal": {
+        "type": "int"
+      },
+      "smaller": {
+        "type": "int"
+      },
+      "missed": {
+        "type": "int"
+      }
+    }
+  }
 }

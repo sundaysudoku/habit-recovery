@@ -236,12 +236,6 @@ abstract class AppLocalizations {
   /// **'Last 7 days'**
   String get progressLast7Days;
 
-  /// No description provided for @progressPlaceholder.
-  ///
-  /// In en, this message translates to:
-  /// **'Here you will see your small steps and comebacks, not just streaks.'**
-  String get progressPlaceholder;
-
   /// No description provided for @settingsReminders.
   ///
   /// In en, this message translates to:
@@ -427,6 +421,150 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Please fill this in.'**
   String get fieldRequired;
+
+  /// Shown when the user chose the smaller target during recovery.
+  ///
+  /// In en, this message translates to:
+  /// **'Goal for now: {smallerTarget} · Normal: {target}'**
+  String habitTargetsFocusSmaller(String smallerTarget, String target);
+
+  /// No description provided for @habitFocusSmallerLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Use the smaller goal for now'**
+  String get habitFocusSmallerLabel;
+
+  /// No description provided for @habitFocusSmallerHelper.
+  ///
+  /// In en, this message translates to:
+  /// **'Good for restarting after a break. Switch back whenever you feel ready.'**
+  String get habitFocusSmallerHelper;
+
+  /// No description provided for @recoveryTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Let\'s restart {name} gently'**
+  String recoveryTitle(String name);
+
+  /// Recovery Mode message. Must be warm and free of guilt or blame.
+  ///
+  /// In en, this message translates to:
+  /// **'The last couple of planned days didn\'t happen. That\'s okay, it happens to everyone. How would you like to continue?'**
+  String get recoveryBody;
+
+  /// No description provided for @recoveryUseSmaller.
+  ///
+  /// In en, this message translates to:
+  /// **'Make it smaller ({smallerTarget})'**
+  String recoveryUseSmaller(String smallerTarget);
+
+  /// No description provided for @recoveryUseNormal.
+  ///
+  /// In en, this message translates to:
+  /// **'Keep the normal goal'**
+  String get recoveryUseNormal;
+
+  /// No description provided for @recoveryChangeSchedule.
+  ///
+  /// In en, this message translates to:
+  /// **'Change schedule'**
+  String get recoveryChangeSchedule;
+
+  /// No description provided for @recoverySkip.
+  ///
+  /// In en, this message translates to:
+  /// **'Not now'**
+  String get recoverySkip;
+
+  /// No description provided for @recoverySmallerDone.
+  ///
+  /// In en, this message translates to:
+  /// **'Great choice. {smallerTarget} counts fully.'**
+  String recoverySmallerDone(String smallerTarget);
+
+  /// No description provided for @recoveryNormalDone.
+  ///
+  /// In en, this message translates to:
+  /// **'Welcome back. You\'ve got this.'**
+  String get recoveryNormalDone;
+
+  /// No description provided for @progressLast30Days.
+  ///
+  /// In en, this message translates to:
+  /// **'Last 30 days'**
+  String get progressLast30Days;
+
+  /// No description provided for @progressNoHabits.
+  ///
+  /// In en, this message translates to:
+  /// **'Add a habit to see your progress here.'**
+  String get progressNoHabits;
+
+  /// No description provided for @progressShowedUp.
+  ///
+  /// In en, this message translates to:
+  /// **'You showed up {showedUp} of {planned} planned times'**
+  String progressShowedUp(int showedUp, int planned);
+
+  /// No description provided for @progressFullGoal.
+  ///
+  /// In en, this message translates to:
+  /// **'Full goal'**
+  String get progressFullGoal;
+
+  /// No description provided for @progressSmallSteps.
+  ///
+  /// In en, this message translates to:
+  /// **'Small steps'**
+  String get progressSmallSteps;
+
+  /// No description provided for @progressComebacks.
+  ///
+  /// In en, this message translates to:
+  /// **'Comebacks'**
+  String get progressComebacks;
+
+  /// No description provided for @progressNotDone.
+  ///
+  /// In en, this message translates to:
+  /// **'Not done'**
+  String get progressNotDone;
+
+  /// No description provided for @progressHabitCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{showedUp}/{planned}'**
+  String progressHabitCount(int showedUp, int planned);
+
+  /// No description provided for @progressEncourageComebacks.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{You came back after a break once. That matters most.} other{You came back after a break {count} times. That matters most.}}'**
+  String progressEncourageComebacks(int count);
+
+  /// No description provided for @progressEncourageSmall.
+  ///
+  /// In en, this message translates to:
+  /// **'Small steps keep the habit alive. Nice work.'**
+  String get progressEncourageSmall;
+
+  /// No description provided for @progressEncourageAny.
+  ///
+  /// In en, this message translates to:
+  /// **'Every time you show up counts.'**
+  String get progressEncourageAny;
+
+  /// No description provided for @progressEncourageStart.
+  ///
+  /// In en, this message translates to:
+  /// **'A fresh start is always available. One small step is enough.'**
+  String get progressEncourageStart;
+
+  /// Screen reader label for one day in the progress chart.
+  ///
+  /// In en, this message translates to:
+  /// **'{date}: {normal} full, {smaller} small steps, {missed} not done'**
+  String progressDaySemantics(String date, int normal, int smaller, int missed);
 }
 
 class _AppLocalizationsDelegate

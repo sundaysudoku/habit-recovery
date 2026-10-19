@@ -14,6 +14,8 @@ class Habit {
     required this.reminderMinutes,
     required this.archived,
     required this.startDate,
+    this.focusSmaller = false,
+    this.recoveryHandledOn,
   });
 
   final int id;
@@ -29,6 +31,12 @@ class Habit {
   /// First day the habit counts; earlier days are never scheduled.
   final LocalDate startDate;
 
+  /// Whether the smaller target is the current goal (a recovery choice).
+  final bool focusSmaller;
+
+  /// Day of the last recovery choice; earlier misses are already handled.
+  final LocalDate? recoveryHandledOn;
+
   bool isScheduledOn(LocalDate date) =>
       !date.isBefore(startDate) && schedule.isScheduledOn(date);
 }
@@ -42,6 +50,7 @@ class HabitDraft {
     required this.smallerTarget,
     required this.schedule,
     this.reminderMinutes,
+    this.focusSmaller = false,
   });
 
   final String name;
@@ -49,4 +58,5 @@ class HabitDraft {
   final String smallerTarget;
   final WeekdaySchedule schedule;
   final int? reminderMinutes;
+  final bool focusSmaller;
 }

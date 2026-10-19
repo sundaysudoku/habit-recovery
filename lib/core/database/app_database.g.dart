@@ -89,6 +89,33 @@ class $HabitsTable extends Habits with TableInfo<$HabitsTable, HabitRow> {
     ),
     defaultValue: const Constant(false),
   );
+  static const VerificationMeta _focusSmallerMeta = const VerificationMeta(
+    'focusSmaller',
+  );
+  @override
+  late final GeneratedColumn<bool> focusSmaller = GeneratedColumn<bool>(
+    'focus_smaller',
+    aliasedName,
+    false,
+    type: DriftSqlType.bool,
+    requiredDuringInsert: false,
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'CHECK ("focus_smaller" IN (0, 1))',
+    ),
+    defaultValue: const Constant(false),
+  );
+  static const VerificationMeta _recoveryHandledOnMeta = const VerificationMeta(
+    'recoveryHandledOn',
+  );
+  @override
+  late final GeneratedColumn<String> recoveryHandledOn =
+      GeneratedColumn<String>(
+        'recovery_handled_on',
+        aliasedName,
+        true,
+        type: DriftSqlType.string,
+        requiredDuringInsert: false,
+      );
   static const VerificationMeta _startDateMeta = const VerificationMeta(
     'startDate',
   );
@@ -120,6 +147,8 @@ class $HabitsTable extends Habits with TableInfo<$HabitsTable, HabitRow> {
     weekdayMask,
     reminderMinutes,
     archived,
+    focusSmaller,
+    recoveryHandledOn,
     startDate,
     createdAt,
   ];
@@ -194,6 +223,24 @@ class $HabitsTable extends Habits with TableInfo<$HabitsTable, HabitRow> {
         archived.isAcceptableOrUnknown(data['archived']!, _archivedMeta),
       );
     }
+    if (data.containsKey('focus_smaller')) {
+      context.handle(
+        _focusSmallerMeta,
+        focusSmaller.isAcceptableOrUnknown(
+          data['focus_smaller']!,
+          _focusSmallerMeta,
+        ),
+      );
+    }
+    if (data.containsKey('recovery_handled_on')) {
+      context.handle(
+        _recoveryHandledOnMeta,
+        recoveryHandledOn.isAcceptableOrUnknown(
+          data['recovery_handled_on']!,
+          _recoveryHandledOnMeta,
+        ),
+      );
+    }
     if (data.containsKey('start_date')) {
       context.handle(
         _startDateMeta,
@@ -247,6 +294,14 @@ class $HabitsTable extends Habits with TableInfo<$HabitsTable, HabitRow> {
         DriftSqlType.bool,
         data['${effectivePrefix}archived'],
       )!,
+      focusSmaller: attachedDatabase.typeMapping.read(
+        DriftSqlType.bool,
+        data['${effectivePrefix}focus_smaller'],
+      )!,
+      recoveryHandledOn: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}recovery_handled_on'],
+      ),
       startDate: attachedDatabase.typeMapping.read(
         DriftSqlType.string,
         data['${effectivePrefix}start_date'],
@@ -277,6 +332,14 @@ class HabitRow extends DataClass implements Insertable<HabitRow> {
   final int? reminderMinutes;
   final bool archived;
 
+  /// Recovery choice: use the smaller target as today's goal for now.
+  /// Added in schema version 2.
+  final bool focusSmaller;
+
+  /// Local date `YYYY-MM-DD` of the last recovery choice; misses on earlier
+  /// days no longer trigger Recovery Mode. Added in schema version 2.
+  final String? recoveryHandledOn;
+
   /// Local calendar date `YYYY-MM-DD` from which the habit is scheduled.
   final String startDate;
   final DateTime createdAt;
@@ -288,6 +351,8 @@ class HabitRow extends DataClass implements Insertable<HabitRow> {
     required this.weekdayMask,
     this.reminderMinutes,
     required this.archived,
+    required this.focusSmaller,
+    this.recoveryHandledOn,
     required this.startDate,
     required this.createdAt,
   });
@@ -303,6 +368,10 @@ class HabitRow extends DataClass implements Insertable<HabitRow> {
       map['reminder_minutes'] = Variable<int>(reminderMinutes);
     }
     map['archived'] = Variable<bool>(archived);
+    map['focus_smaller'] = Variable<bool>(focusSmaller);
+    if (!nullToAbsent || recoveryHandledOn != null) {
+      map['recovery_handled_on'] = Variable<String>(recoveryHandledOn);
+    }
     map['start_date'] = Variable<String>(startDate);
     map['created_at'] = Variable<DateTime>(createdAt);
     return map;
@@ -319,6 +388,10 @@ class HabitRow extends DataClass implements Insertable<HabitRow> {
           ? const Value.absent()
           : Value(reminderMinutes),
       archived: Value(archived),
+      focusSmaller: Value(focusSmaller),
+      recoveryHandledOn: recoveryHandledOn == null && nullToAbsent
+          ? const Value.absent()
+          : Value(recoveryHandledOn),
       startDate: Value(startDate),
       createdAt: Value(createdAt),
     );
@@ -337,6 +410,10 @@ class HabitRow extends DataClass implements Insertable<HabitRow> {
       weekdayMask: serializer.fromJson<int>(json['weekdayMask']),
       reminderMinutes: serializer.fromJson<int?>(json['reminderMinutes']),
       archived: serializer.fromJson<bool>(json['archived']),
+      focusSmaller: serializer.fromJson<bool>(json['focusSmaller']),
+      recoveryHandledOn: serializer.fromJson<String?>(
+        json['recoveryHandledOn'],
+      ),
       startDate: serializer.fromJson<String>(json['startDate']),
       createdAt: serializer.fromJson<DateTime>(json['createdAt']),
     );
@@ -352,6 +429,8 @@ class HabitRow extends DataClass implements Insertable<HabitRow> {
       'weekdayMask': serializer.toJson<int>(weekdayMask),
       'reminderMinutes': serializer.toJson<int?>(reminderMinutes),
       'archived': serializer.toJson<bool>(archived),
+      'focusSmaller': serializer.toJson<bool>(focusSmaller),
+      'recoveryHandledOn': serializer.toJson<String?>(recoveryHandledOn),
       'startDate': serializer.toJson<String>(startDate),
       'createdAt': serializer.toJson<DateTime>(createdAt),
     };
@@ -365,6 +444,8 @@ class HabitRow extends DataClass implements Insertable<HabitRow> {
     int? weekdayMask,
     Value<int?> reminderMinutes = const Value.absent(),
     bool? archived,
+    bool? focusSmaller,
+    Value<String?> recoveryHandledOn = const Value.absent(),
     String? startDate,
     DateTime? createdAt,
   }) => HabitRow(
@@ -377,6 +458,10 @@ class HabitRow extends DataClass implements Insertable<HabitRow> {
         ? reminderMinutes.value
         : this.reminderMinutes,
     archived: archived ?? this.archived,
+    focusSmaller: focusSmaller ?? this.focusSmaller,
+    recoveryHandledOn: recoveryHandledOn.present
+        ? recoveryHandledOn.value
+        : this.recoveryHandledOn,
     startDate: startDate ?? this.startDate,
     createdAt: createdAt ?? this.createdAt,
   );
@@ -397,6 +482,12 @@ class HabitRow extends DataClass implements Insertable<HabitRow> {
           ? data.reminderMinutes.value
           : this.reminderMinutes,
       archived: data.archived.present ? data.archived.value : this.archived,
+      focusSmaller: data.focusSmaller.present
+          ? data.focusSmaller.value
+          : this.focusSmaller,
+      recoveryHandledOn: data.recoveryHandledOn.present
+          ? data.recoveryHandledOn.value
+          : this.recoveryHandledOn,
       startDate: data.startDate.present ? data.startDate.value : this.startDate,
       createdAt: data.createdAt.present ? data.createdAt.value : this.createdAt,
     );
@@ -412,6 +503,8 @@ class HabitRow extends DataClass implements Insertable<HabitRow> {
           ..write('weekdayMask: $weekdayMask, ')
           ..write('reminderMinutes: $reminderMinutes, ')
           ..write('archived: $archived, ')
+          ..write('focusSmaller: $focusSmaller, ')
+          ..write('recoveryHandledOn: $recoveryHandledOn, ')
           ..write('startDate: $startDate, ')
           ..write('createdAt: $createdAt')
           ..write(')'))
@@ -427,6 +520,8 @@ class HabitRow extends DataClass implements Insertable<HabitRow> {
     weekdayMask,
     reminderMinutes,
     archived,
+    focusSmaller,
+    recoveryHandledOn,
     startDate,
     createdAt,
   );
@@ -441,6 +536,8 @@ class HabitRow extends DataClass implements Insertable<HabitRow> {
           other.weekdayMask == this.weekdayMask &&
           other.reminderMinutes == this.reminderMinutes &&
           other.archived == this.archived &&
+          other.focusSmaller == this.focusSmaller &&
+          other.recoveryHandledOn == this.recoveryHandledOn &&
           other.startDate == this.startDate &&
           other.createdAt == this.createdAt);
 }
@@ -453,6 +550,8 @@ class HabitsCompanion extends UpdateCompanion<HabitRow> {
   final Value<int> weekdayMask;
   final Value<int?> reminderMinutes;
   final Value<bool> archived;
+  final Value<bool> focusSmaller;
+  final Value<String?> recoveryHandledOn;
   final Value<String> startDate;
   final Value<DateTime> createdAt;
   const HabitsCompanion({
@@ -463,6 +562,8 @@ class HabitsCompanion extends UpdateCompanion<HabitRow> {
     this.weekdayMask = const Value.absent(),
     this.reminderMinutes = const Value.absent(),
     this.archived = const Value.absent(),
+    this.focusSmaller = const Value.absent(),
+    this.recoveryHandledOn = const Value.absent(),
     this.startDate = const Value.absent(),
     this.createdAt = const Value.absent(),
   });
@@ -474,6 +575,8 @@ class HabitsCompanion extends UpdateCompanion<HabitRow> {
     required int weekdayMask,
     this.reminderMinutes = const Value.absent(),
     this.archived = const Value.absent(),
+    this.focusSmaller = const Value.absent(),
+    this.recoveryHandledOn = const Value.absent(),
     required String startDate,
     required DateTime createdAt,
   }) : name = Value(name),
@@ -490,6 +593,8 @@ class HabitsCompanion extends UpdateCompanion<HabitRow> {
     Expression<int>? weekdayMask,
     Expression<int>? reminderMinutes,
     Expression<bool>? archived,
+    Expression<bool>? focusSmaller,
+    Expression<String>? recoveryHandledOn,
     Expression<String>? startDate,
     Expression<DateTime>? createdAt,
   }) {
@@ -501,6 +606,8 @@ class HabitsCompanion extends UpdateCompanion<HabitRow> {
       if (weekdayMask != null) 'weekday_mask': weekdayMask,
       if (reminderMinutes != null) 'reminder_minutes': reminderMinutes,
       if (archived != null) 'archived': archived,
+      if (focusSmaller != null) 'focus_smaller': focusSmaller,
+      if (recoveryHandledOn != null) 'recovery_handled_on': recoveryHandledOn,
       if (startDate != null) 'start_date': startDate,
       if (createdAt != null) 'created_at': createdAt,
     });
@@ -514,6 +621,8 @@ class HabitsCompanion extends UpdateCompanion<HabitRow> {
     Value<int>? weekdayMask,
     Value<int?>? reminderMinutes,
     Value<bool>? archived,
+    Value<bool>? focusSmaller,
+    Value<String?>? recoveryHandledOn,
     Value<String>? startDate,
     Value<DateTime>? createdAt,
   }) {
@@ -525,6 +634,8 @@ class HabitsCompanion extends UpdateCompanion<HabitRow> {
       weekdayMask: weekdayMask ?? this.weekdayMask,
       reminderMinutes: reminderMinutes ?? this.reminderMinutes,
       archived: archived ?? this.archived,
+      focusSmaller: focusSmaller ?? this.focusSmaller,
+      recoveryHandledOn: recoveryHandledOn ?? this.recoveryHandledOn,
       startDate: startDate ?? this.startDate,
       createdAt: createdAt ?? this.createdAt,
     );
@@ -554,6 +665,12 @@ class HabitsCompanion extends UpdateCompanion<HabitRow> {
     if (archived.present) {
       map['archived'] = Variable<bool>(archived.value);
     }
+    if (focusSmaller.present) {
+      map['focus_smaller'] = Variable<bool>(focusSmaller.value);
+    }
+    if (recoveryHandledOn.present) {
+      map['recovery_handled_on'] = Variable<String>(recoveryHandledOn.value);
+    }
     if (startDate.present) {
       map['start_date'] = Variable<String>(startDate.value);
     }
@@ -573,6 +690,8 @@ class HabitsCompanion extends UpdateCompanion<HabitRow> {
           ..write('weekdayMask: $weekdayMask, ')
           ..write('reminderMinutes: $reminderMinutes, ')
           ..write('archived: $archived, ')
+          ..write('focusSmaller: $focusSmaller, ')
+          ..write('recoveryHandledOn: $recoveryHandledOn, ')
           ..write('startDate: $startDate, ')
           ..write('createdAt: $createdAt')
           ..write(')'))
@@ -975,6 +1094,8 @@ typedef $$HabitsTableCreateCompanionBuilder =
       required int weekdayMask,
       Value<int?> reminderMinutes,
       Value<bool> archived,
+      Value<bool> focusSmaller,
+      Value<String?> recoveryHandledOn,
       required String startDate,
       required DateTime createdAt,
     });
@@ -987,6 +1108,8 @@ typedef $$HabitsTableUpdateCompanionBuilder =
       Value<int> weekdayMask,
       Value<int?> reminderMinutes,
       Value<bool> archived,
+      Value<bool> focusSmaller,
+      Value<String?> recoveryHandledOn,
       Value<String> startDate,
       Value<DateTime> createdAt,
     });
@@ -1055,6 +1178,16 @@ class $$HabitsTableFilterComposer
 
   ColumnFilters<bool> get archived => $composableBuilder(
     column: $table.archived,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<bool> get focusSmaller => $composableBuilder(
+    column: $table.focusSmaller,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get recoveryHandledOn => $composableBuilder(
+    column: $table.recoveryHandledOn,
     builder: (column) => ColumnFilters(column),
   );
 
@@ -1138,6 +1271,16 @@ class $$HabitsTableOrderingComposer
     builder: (column) => ColumnOrderings(column),
   );
 
+  ColumnOrderings<bool> get focusSmaller => $composableBuilder(
+    column: $table.focusSmaller,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get recoveryHandledOn => $composableBuilder(
+    column: $table.recoveryHandledOn,
+    builder: (column) => ColumnOrderings(column),
+  );
+
   ColumnOrderings<String> get startDate => $composableBuilder(
     column: $table.startDate,
     builder: (column) => ColumnOrderings(column),
@@ -1186,6 +1329,16 @@ class $$HabitsTableAnnotationComposer
 
   GeneratedColumn<bool> get archived =>
       $composableBuilder(column: $table.archived, builder: (column) => column);
+
+  GeneratedColumn<bool> get focusSmaller => $composableBuilder(
+    column: $table.focusSmaller,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<String> get recoveryHandledOn => $composableBuilder(
+    column: $table.recoveryHandledOn,
+    builder: (column) => column,
+  );
 
   GeneratedColumn<String> get startDate =>
       $composableBuilder(column: $table.startDate, builder: (column) => column);
@@ -1254,6 +1407,8 @@ class $$HabitsTableTableManager
                 Value<int> weekdayMask = const Value.absent(),
                 Value<int?> reminderMinutes = const Value.absent(),
                 Value<bool> archived = const Value.absent(),
+                Value<bool> focusSmaller = const Value.absent(),
+                Value<String?> recoveryHandledOn = const Value.absent(),
                 Value<String> startDate = const Value.absent(),
                 Value<DateTime> createdAt = const Value.absent(),
               }) => HabitsCompanion(
@@ -1264,6 +1419,8 @@ class $$HabitsTableTableManager
                 weekdayMask: weekdayMask,
                 reminderMinutes: reminderMinutes,
                 archived: archived,
+                focusSmaller: focusSmaller,
+                recoveryHandledOn: recoveryHandledOn,
                 startDate: startDate,
                 createdAt: createdAt,
               ),
@@ -1276,6 +1433,8 @@ class $$HabitsTableTableManager
                 required int weekdayMask,
                 Value<int?> reminderMinutes = const Value.absent(),
                 Value<bool> archived = const Value.absent(),
+                Value<bool> focusSmaller = const Value.absent(),
+                Value<String?> recoveryHandledOn = const Value.absent(),
                 required String startDate,
                 required DateTime createdAt,
               }) => HabitsCompanion.insert(
@@ -1286,6 +1445,8 @@ class $$HabitsTableTableManager
                 weekdayMask: weekdayMask,
                 reminderMinutes: reminderMinutes,
                 archived: archived,
+                focusSmaller: focusSmaller,
+                recoveryHandledOn: recoveryHandledOn,
                 startDate: startDate,
                 createdAt: createdAt,
               ),

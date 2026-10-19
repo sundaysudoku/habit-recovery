@@ -54,6 +54,7 @@ class HabitRepository {
             smallerTarget: draft.smallerTarget.trim(),
             weekdayMask: draft.schedule.mask,
             reminderMinutes: Value(draft.reminderMinutes),
+            focusSmaller: Value(draft.focusSmaller),
             startDate: LocalDate.fromDateTime(now).toIso(),
             createdAt: now,
           ),
@@ -68,12 +69,25 @@ class HabitRepository {
           smallerTarget: Value(draft.smallerTarget.trim()),
           weekdayMask: Value(draft.schedule.mask),
           reminderMinutes: Value(draft.reminderMinutes),
+          focusSmaller: Value(draft.focusSmaller),
         ),
       );
 
   Future<void> setArchived(int id, {required bool archived}) =>
       (_db.update(_db.habits)..where((h) => h.id.equals(id))).write(
         HabitsCompanion(archived: Value(archived)),
+      );
+
+  /// Records a Recovery Mode choice made today. [focusSmaller] is left
+  /// unchanged when null.
+  Future<void> handleRecovery(int id, {bool? focusSmaller}) =>
+      (_db.update(_db.habits)..where((h) => h.id.equals(id))).write(
+        HabitsCompanion(
+          recoveryHandledOn: Value(LocalDate.fromDateTime(_now()).toIso()),
+          focusSmaller: focusSmaller == null
+              ? const Value.absent()
+              : Value(focusSmaller),
+        ),
       );
 
   /// Deletes the habit and, through the foreign key, all its check-ins.
@@ -89,5 +103,9 @@ class HabitRepository {
     reminderMinutes: row.reminderMinutes,
     archived: row.archived,
     startDate: LocalDate.parse(row.startDate),
+    focusSmaller: row.focusSmaller,
+    recoveryHandledOn: row.recoveryHandledOn == null
+        ? null
+        : LocalDate.parse(row.recoveryHandledOn!),
   );
 }

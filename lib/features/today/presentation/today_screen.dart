@@ -8,12 +8,17 @@ import '../../../l10n/app_localizations.dart';
 import '../../habits/data/habit_repository.dart';
 import '../../habits/domain/habit.dart';
 import '../../habits/presentation/habits_screen.dart';
+import '../../recovery/domain/recovery.dart';
+import '../../recovery/presentation/recovery_card.dart';
 import '../data/check_in_repository.dart';
 import '../domain/check_in_status.dart';
 
-final _checkInsForDateProvider =
-    StreamProvider.family<Map<int, CheckInStatus>, LocalDate>(
-      (ref, date) => ref.watch(checkInRepositoryProvider).watchForDate(date),
+/// Today's check-ins plus enough history to evaluate Recovery Mode.
+final _recentCheckInsProvider =
+    StreamProvider.family<CheckInHistory, LocalDate>(
+      (ref, today) => ref
+          .watch(checkInRepositoryProvider)
+          .watchRange(today.addDays(-recoveryLookbackDays), today),
     );
 
 class TodayScreen extends ConsumerWidget {
@@ -25,9 +30,15 @@ class TodayScreen extends ConsumerWidget {
     final locale = Localizations.localeOf(context).toLanguageTag();
     final date = LocalDate.fromDateTime(ref.watch(clockProvider)());
     final allHabits = ref.watch(activeHabitsProvider).value;
-    final checkIns =
-        ref.watch(_checkInsForDateProvider(date)).value ?? const {};
+    final history = ref.watch(_recentCheckInsProvider(date)).value;
     final habits = allHabits?.where((h) => h.isScheduledOn(date)).toList();
+    final recovering = history == null
+        ? const <Habit>[]
+        : [
+            for (final habit in allHabits ?? const <Habit>[])
+              if (needsRecovery(habit, history[habit.id] ?? const {}, date))
+                habit,
+          ];
 
     return Scaffold(
       appBar: AppBar(title: Text(l10n.navToday)),
@@ -41,6 +52,8 @@ class TodayScreen extends ConsumerWidget {
           const SizedBox(height: 4),
           Text(l10n.todaySubtitle),
           const SizedBox(height: 16),
+          for (final habit in recovering)
+            RecoveryCard(key: ValueKey('recovery-${habit.id}'), habit: habit),
           if (allHabits == null)
             const SizedBox.shrink()
           else if (allHabits.isEmpty)
@@ -59,7 +72,7 @@ class TodayScreen extends ConsumerWidget {
               _HabitCheckInCard(
                 key: ValueKey(habit.id),
                 habit: habit,
-                status: checkIns[habit.id],
+                status: history?[habit.id]?[date],
                 onChanged: (status) {
                   final repo = ref.read(checkInRepositoryProvider);
                   status == null
@@ -123,7 +136,12 @@ class _HabitCheckInCard extends StatelessWidget {
             Text(habit.name, style: theme.textTheme.titleMedium),
             const SizedBox(height: 4),
             Text(
-              l10n.habitTargets(habit.normalTarget, habit.smallerTarget),
+              habit.focusSmaller
+                  ? l10n.habitTargetsFocusSmaller(
+                      habit.smallerTarget,
+                      habit.normalTarget,
+                    )
+                  : l10n.habitTargets(habit.normalTarget, habit.smallerTarget),
               style: theme.textTheme.bodyMedium?.copyWith(
                 color: theme.colorScheme.onSurfaceVariant,
               ),

@@ -86,10 +86,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get progressLast7Days => 'Last 7 days';
 
   @override
-  String get progressPlaceholder =>
-      'Here you will see your small steps and comebacks, not just streaks.';
-
-  @override
   String get settingsReminders => 'Reminders';
 
   @override
@@ -189,4 +185,107 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get fieldRequired => 'Please fill this in.';
+
+  @override
+  String habitTargetsFocusSmaller(String smallerTarget, String target) {
+    return 'Goal for now: $smallerTarget · Normal: $target';
+  }
+
+  @override
+  String get habitFocusSmallerLabel => 'Use the smaller goal for now';
+
+  @override
+  String get habitFocusSmallerHelper =>
+      'Good for restarting after a break. Switch back whenever you feel ready.';
+
+  @override
+  String recoveryTitle(String name) {
+    return 'Let\'s restart $name gently';
+  }
+
+  @override
+  String get recoveryBody =>
+      'The last couple of planned days didn\'t happen. That\'s okay, it happens to everyone. How would you like to continue?';
+
+  @override
+  String recoveryUseSmaller(String smallerTarget) {
+    return 'Make it smaller ($smallerTarget)';
+  }
+
+  @override
+  String get recoveryUseNormal => 'Keep the normal goal';
+
+  @override
+  String get recoveryChangeSchedule => 'Change schedule';
+
+  @override
+  String get recoverySkip => 'Not now';
+
+  @override
+  String recoverySmallerDone(String smallerTarget) {
+    return 'Great choice. $smallerTarget counts fully.';
+  }
+
+  @override
+  String get recoveryNormalDone => 'Welcome back. You\'ve got this.';
+
+  @override
+  String get progressLast30Days => 'Last 30 days';
+
+  @override
+  String get progressNoHabits => 'Add a habit to see your progress here.';
+
+  @override
+  String progressShowedUp(int showedUp, int planned) {
+    return 'You showed up $showedUp of $planned planned times';
+  }
+
+  @override
+  String get progressFullGoal => 'Full goal';
+
+  @override
+  String get progressSmallSteps => 'Small steps';
+
+  @override
+  String get progressComebacks => 'Comebacks';
+
+  @override
+  String get progressNotDone => 'Not done';
+
+  @override
+  String progressHabitCount(int showedUp, int planned) {
+    return '$showedUp/$planned';
+  }
+
+  @override
+  String progressEncourageComebacks(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'You came back after a break $count times. That matters most.',
+      one: 'You came back after a break once. That matters most.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get progressEncourageSmall =>
+      'Small steps keep the habit alive. Nice work.';
+
+  @override
+  String get progressEncourageAny => 'Every time you show up counts.';
+
+  @override
+  String get progressEncourageStart =>
+      'A fresh start is always available. One small step is enough.';
+
+  @override
+  String progressDaySemantics(
+    String date,
+    int normal,
+    int smaller,
+    int missed,
+  ) {
+    return '$date: $normal full, $smaller small steps, $missed not done';
+  }
 }

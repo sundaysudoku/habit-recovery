@@ -10,6 +10,9 @@ enum CheckInStatus {
 
   final int code;
 
+  /// Normal and smaller completions both count as showing up.
+  bool get showedUp => this != notDone;
+
   static CheckInStatus fromCode(int code) =>
       values.firstWhere((s) => s.code == code);
 }
