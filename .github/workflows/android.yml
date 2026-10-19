@@ -6,6 +6,9 @@ on:
   push:
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -35,3 +38,14 @@ jobs:
         with:
           name: habit-recovery-aab
           path: build/app/outputs/bundle/release/app-release.aab
+      - name: Publish the test APK as a one-tap download (Releases page)
+        if: github.ref_name == 'phase-7' || github.event_name == 'workflow_dispatch'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cp build/app/outputs/flutter-apk/app-debug.apk habit-recovery-test.apk
+          gh release delete preview --cleanup-tag --yes || true
+          gh release create preview habit-recovery-test.apk \
+            --prerelease --target "$GITHUB_SHA" \
+            --title "Habit Recovery test build" \
+            --notes "Test APK (debug-signed, test ads). Install it on an Android phone. Built from $GITHUB_SHA."
