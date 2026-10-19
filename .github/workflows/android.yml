@@ -39,7 +39,7 @@ jobs:
           name: habit-recovery-aab
           path: build/app/outputs/bundle/release/app-release.aab
       - name: Publish the test APK as a one-tap download (Releases page)
-        if: github.ref_name == 'phase-7' || github.event_name == 'workflow_dispatch'
+        if: github.ref_name == 'main' || github.event_name == 'workflow_dispatch'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
