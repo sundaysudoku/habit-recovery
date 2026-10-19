@@ -33,6 +33,15 @@ jobs:
       - run: flutter test
       - name: Build debug APK (for installing on your phone)
         run: flutter build apk --debug
+      - name: Set up upload key (only when the UPLOAD_KEYSTORE_BASE64 secret exists)
+        env:
+          UPLOAD_KEYSTORE_BASE64: ${{ secrets.UPLOAD_KEYSTORE_BASE64 }}
+          UPLOAD_KEY_PASSWORD: ${{ secrets.UPLOAD_KEY_PASSWORD }}
+        run: |
+          if [ -n "$UPLOAD_KEYSTORE_BASE64" ]; then
+            echo "$UPLOAD_KEYSTORE_BASE64" | base64 -d > android/app/upload-keystore.jks
+            printf 'storeFile=upload-keystore.jks\nstorePassword=%s\nkeyAlias=upload\nkeyPassword=%s\n' "$UPLOAD_KEY_PASSWORD" "$UPLOAD_KEY_PASSWORD" > android/key.properties
+          fi
       - name: Build release bundle (.aab, debug-signed unless key.properties exists)
         run: flutter build appbundle --release
       - uses: actions/upload-artifact@v4
