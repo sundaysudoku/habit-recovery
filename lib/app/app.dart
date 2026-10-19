@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../features/today/presentation/today_screen.dart';
+import '../core/preferences/app_preferences.dart';
+import '../features/onboarding/presentation/onboarding_screen.dart';
 import '../l10n/app_localizations.dart';
+import 'home_shell.dart';
 import 'theme.dart';
 
-class HabitRecoveryApp extends StatelessWidget {
+class HabitRecoveryApp extends ConsumerWidget {
   const HabitRecoveryApp({super.key, this.locale});
 
   /// Forces a locale (used by tests); null follows the device language.
   final Locale? locale;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final onboardingComplete = ref.watch(onboardingCompleteProvider);
     return MaterialApp(
       onGenerateTitle: (context) => AppLocalizations.of(context).appTitle,
       theme: buildLightTheme(),
@@ -19,7 +23,7 @@ class HabitRecoveryApp extends StatelessWidget {
       locale: locale,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      home: const TodayScreen(),
+      home: onboardingComplete ? const HomeShell() : const OnboardingScreen(),
     );
   }
 }

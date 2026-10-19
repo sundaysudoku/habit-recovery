@@ -1,34 +1,59 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:habit_recovery/app/app.dart';
+
+import '../helpers.dart';
 
 void main() {
-  testWidgets('shows the Today placeholder in English', (tester) async {
-    await tester.pumpWidget(const HabitRecoveryApp(locale: Locale('en')));
-    await tester.pumpAndSettle();
-
-    expect(find.text('Habit Recovery'), findsOneWidget);
-    expect(
-      find.text('Small steps count. Your habits will appear here.'),
-      findsOneWidget,
-    );
-  });
-
-  testWidgets('shows the Today placeholder in Vietnamese', (tester) async {
-    await tester.pumpWidget(const HabitRecoveryApp(locale: Locale('vi')));
-    await tester.pumpAndSettle();
-
-    expect(
-      find.text(
-        'Bước nhỏ cũng đáng ghi nhận. Thói quen của bạn sẽ hiện ở đây.',
-      ),
-      findsOneWidget,
-    );
-  });
-
   testWidgets('uses Material 3', (tester) async {
-    await tester.pumpWidget(const HabitRecoveryApp(locale: Locale('en')));
-    final context = tester.element(find.byType(Scaffold));
+    await pumpApp(tester);
+    final context = tester.element(find.byType(Scaffold).first);
     expect(Theme.of(context).useMaterial3, isTrue);
+  });
+
+  testWidgets('bottom navigation switches between the four tabs', (
+    tester,
+  ) async {
+    await pumpApp(tester, onboardingComplete: true);
+
+    expect(find.byType(NavigationBar), findsOneWidget);
+    for (final tab in ['Habits', 'Progress', 'Settings', 'Today']) {
+      await tester.tap(
+        find.descendant(
+          of: find.byType(NavigationBar),
+          matching: find.text(tab),
+        ),
+      );
+      await tester.pumpAndSettle();
+      expect(
+        find.descendant(of: find.byType(AppBar), matching: find.text(tab)),
+        findsOneWidget,
+      );
+    }
+  });
+
+  testWidgets('shows Vietnamese text when the locale is vi', (tester) async {
+    await pumpApp(tester, locale: const Locale('vi'), onboardingComplete: true);
+
+    expect(
+      find.descendant(of: find.byType(AppBar), matching: find.text('Hôm nay')),
+      findsOneWidget,
+    );
+    expect(find.text('Đi bộ'), findsOneWidget);
+  });
+
+  testWidgets('no layout overflow with large text in Vietnamese', (
+    tester,
+  ) async {
+    tester.platformDispatcher.textScaleFactorTestValue = 2.0;
+    addTearDown(tester.platformDispatcher.clearTextScaleFactorTestValue);
+
+    await pumpApp(tester, locale: const Locale('vi'));
+    await tester.tap(find.text('Bỏ qua'));
+    await tester.pumpAndSettle();
+    for (final tab in ['Thói quen', 'Tiến bộ', 'Cài đặt', 'Hôm nay']) {
+      await tester.tap(find.text(tab).last);
+      await tester.pumpAndSettle();
+    }
+    expect(tester.takeException(), isNull);
   });
 }

@@ -1,5 +1,47 @@
 {
   "@@locale": "vi",
   "appTitle": "Habit Recovery",
-  "todayPlaceholder": "Bước nhỏ cũng đáng ghi nhận. Thói quen của bạn sẽ hiện ở đây."
+
+  "onboardingTitle1": "Xây thói quen nhẹ nhàng",
+  "onboardingBody1": "Chọn vài thói quen quan trọng với bạn. Làm phiên bản nhỏ hơn vẫn được tính.",
+  "onboardingTitle2": "Lỡ vài ngày? Bắt đầu lại thôi",
+  "onboardingBody2": "Ở đây không có hình phạt. Khi bạn lỡ vài ngày, app giúp bạn quay lại bằng một bước nhỏ hơn.",
+  "onboardingTitle3": "Dữ liệu nằm trên điện thoại của bạn",
+  "onboardingBody3": "Không cần tài khoản. Mọi thứ chỉ được lưu trên máy này và dùng được khi không có mạng.",
+  "onboardingSkip": "Bỏ qua",
+  "onboardingNext": "Tiếp",
+  "onboardingStart": "Bắt đầu",
+  "onboardingPageIndicator": "Trang {current} trên {total}",
+
+  "navToday": "Hôm nay",
+  "navHabits": "Thói quen",
+  "navProgress": "Tiến bộ",
+  "navSettings": "Cài đặt",
+
+  "todaySubtitle": "Bước nào hôm nay cũng là bước tốt.",
+  "habitTargets": "Mục tiêu: {target} · Nhỏ hơn: {smallerTarget}",
+  "checkInNormal": "Đã xong",
+  "checkInSmaller": "Bước nhỏ",
+  "checkInNotDone": "Hôm nay nghỉ",
+
+  "sampleHabitWalk": "Đi bộ",
+  "sampleHabitWalkTarget": "30 phút",
+  "sampleHabitWalkSmall": "5 phút",
+  "sampleHabitRead": "Đọc sách",
+  "sampleHabitReadTarget": "20 trang",
+  "sampleHabitReadSmall": "1 trang",
+  "sampleHabitWater": "Uống nước",
+  "sampleHabitWaterTarget": "8 cốc",
+  "sampleHabitWaterSmall": "4 cốc",
+
+  "habitsEmpty": "Danh sách thói quen của bạn sẽ hiện ở đây. Sắp tới bạn có thể thêm, sửa và lưu trữ chúng.",
+  "habitsAdd": "Thói quen mới",
+  "comingSoon": "Sắp ra mắt",
+
+  "progressLast7Days": "7 ngày qua",
+  "progressPlaceholder": "Ở đây bạn sẽ thấy những bước nhỏ và những lần quay lại, không chỉ chuỗi ngày liên tiếp.",
+
+  "settingsReminders": "Nhắc nhở",
+  "settingsPrivacy": "Quyền riêng tư",
+  "settingsPrivacySummary": "Dữ liệu của bạn chỉ được lưu trên máy này."
 }

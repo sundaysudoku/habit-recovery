@@ -1,11 +1,59 @@
 {
   "@@locale": "en",
   "appTitle": "Habit Recovery",
-  "@appTitle": {
-    "description": "Name of the app, shown in the app bar."
+  "@appTitle": {"description": "Name of the app."},
+
+  "onboardingTitle1": "Build habits gently",
+  "onboardingBody1": "Pick a few habits that matter to you. Doing a smaller version still counts.",
+  "onboardingTitle2": "Missed a few days? Start again",
+  "onboardingBody2": "There is no punishment here. When you miss a few days, we help you restart with a smaller step.",
+  "onboardingTitle3": "Your data stays on your phone",
+  "onboardingBody3": "No account needed. Everything is stored only on this device and works offline.",
+  "onboardingSkip": "Skip",
+  "onboardingNext": "Next",
+  "onboardingStart": "Get started",
+  "onboardingPageIndicator": "Page {current} of {total}",
+  "@onboardingPageIndicator": {
+    "description": "Screen reader label for the onboarding page dots.",
+    "placeholders": {"current": {"type": "int"}, "total": {"type": "int"}}
   },
-  "todayPlaceholder": "Small steps count. Your habits will appear here.",
-  "@todayPlaceholder": {
-    "description": "Temporary message on the Today screen before habits exist."
-  }
+
+  "navToday": "Today",
+  "navHabits": "Habits",
+  "navProgress": "Progress",
+  "navSettings": "Settings",
+
+  "todaySubtitle": "Any step today is a good step.",
+  "habitTargets": "Goal: {target} · Smaller: {smallerTarget}",
+  "@habitTargets": {
+    "description": "Normal target and smaller target of a habit.",
+    "placeholders": {"target": {"type": "String"}, "smallerTarget": {"type": "String"}}
+  },
+  "checkInNormal": "Done",
+  "@checkInNormal": {"description": "Check-in: completed the normal target."},
+  "checkInSmaller": "Small step",
+  "@checkInSmaller": {"description": "Check-in: completed the smaller target."},
+  "checkInNotDone": "Not today",
+  "@checkInNotDone": {"description": "Check-in: did not do the habit today. Must sound neutral, not judgmental."},
+
+  "sampleHabitWalk": "Walk",
+  "sampleHabitWalkTarget": "30 minutes",
+  "sampleHabitWalkSmall": "5 minutes",
+  "sampleHabitRead": "Read",
+  "sampleHabitReadTarget": "20 pages",
+  "sampleHabitReadSmall": "1 page",
+  "sampleHabitWater": "Drink water",
+  "sampleHabitWaterTarget": "8 glasses",
+  "sampleHabitWaterSmall": "4 glasses",
+
+  "habitsEmpty": "Your habits will be listed here. You can add, edit and archive them soon.",
+  "habitsAdd": "New habit",
+  "comingSoon": "Coming soon",
+
+  "progressLast7Days": "Last 7 days",
+  "progressPlaceholder": "Here you will see your small steps and comebacks, not just streaks.",
+
+  "settingsReminders": "Reminders",
+  "settingsPrivacy": "Privacy",
+  "settingsPrivacySummary": "Your data is stored only on this device."
 }

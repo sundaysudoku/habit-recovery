@@ -98,17 +98,227 @@ abstract class AppLocalizations {
     Locale('vi'),
   ];
 
-  /// Name of the app, shown in the app bar.
+  /// Name of the app.
   ///
   /// In en, this message translates to:
   /// **'Habit Recovery'**
   String get appTitle;
 
-  /// Temporary message on the Today screen before habits exist.
+  /// No description provided for @onboardingTitle1.
   ///
   /// In en, this message translates to:
-  /// **'Small steps count. Your habits will appear here.'**
-  String get todayPlaceholder;
+  /// **'Build habits gently'**
+  String get onboardingTitle1;
+
+  /// No description provided for @onboardingBody1.
+  ///
+  /// In en, this message translates to:
+  /// **'Pick a few habits that matter to you. Doing a smaller version still counts.'**
+  String get onboardingBody1;
+
+  /// No description provided for @onboardingTitle2.
+  ///
+  /// In en, this message translates to:
+  /// **'Missed a few days? Start again'**
+  String get onboardingTitle2;
+
+  /// No description provided for @onboardingBody2.
+  ///
+  /// In en, this message translates to:
+  /// **'There is no punishment here. When you miss a few days, we help you restart with a smaller step.'**
+  String get onboardingBody2;
+
+  /// No description provided for @onboardingTitle3.
+  ///
+  /// In en, this message translates to:
+  /// **'Your data stays on your phone'**
+  String get onboardingTitle3;
+
+  /// No description provided for @onboardingBody3.
+  ///
+  /// In en, this message translates to:
+  /// **'No account needed. Everything is stored only on this device and works offline.'**
+  String get onboardingBody3;
+
+  /// No description provided for @onboardingSkip.
+  ///
+  /// In en, this message translates to:
+  /// **'Skip'**
+  String get onboardingSkip;
+
+  /// No description provided for @onboardingNext.
+  ///
+  /// In en, this message translates to:
+  /// **'Next'**
+  String get onboardingNext;
+
+  /// No description provided for @onboardingStart.
+  ///
+  /// In en, this message translates to:
+  /// **'Get started'**
+  String get onboardingStart;
+
+  /// Screen reader label for the onboarding page dots.
+  ///
+  /// In en, this message translates to:
+  /// **'Page {current} of {total}'**
+  String onboardingPageIndicator(int current, int total);
+
+  /// No description provided for @navToday.
+  ///
+  /// In en, this message translates to:
+  /// **'Today'**
+  String get navToday;
+
+  /// No description provided for @navHabits.
+  ///
+  /// In en, this message translates to:
+  /// **'Habits'**
+  String get navHabits;
+
+  /// No description provided for @navProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'Progress'**
+  String get navProgress;
+
+  /// No description provided for @navSettings.
+  ///
+  /// In en, this message translates to:
+  /// **'Settings'**
+  String get navSettings;
+
+  /// No description provided for @todaySubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Any step today is a good step.'**
+  String get todaySubtitle;
+
+  /// Normal target and smaller target of a habit.
+  ///
+  /// In en, this message translates to:
+  /// **'Goal: {target} · Smaller: {smallerTarget}'**
+  String habitTargets(String target, String smallerTarget);
+
+  /// Check-in: completed the normal target.
+  ///
+  /// In en, this message translates to:
+  /// **'Done'**
+  String get checkInNormal;
+
+  /// Check-in: completed the smaller target.
+  ///
+  /// In en, this message translates to:
+  /// **'Small step'**
+  String get checkInSmaller;
+
+  /// Check-in: did not do the habit today. Must sound neutral, not judgmental.
+  ///
+  /// In en, this message translates to:
+  /// **'Not today'**
+  String get checkInNotDone;
+
+  /// No description provided for @sampleHabitWalk.
+  ///
+  /// In en, this message translates to:
+  /// **'Walk'**
+  String get sampleHabitWalk;
+
+  /// No description provided for @sampleHabitWalkTarget.
+  ///
+  /// In en, this message translates to:
+  /// **'30 minutes'**
+  String get sampleHabitWalkTarget;
+
+  /// No description provided for @sampleHabitWalkSmall.
+  ///
+  /// In en, this message translates to:
+  /// **'5 minutes'**
+  String get sampleHabitWalkSmall;
+
+  /// No description provided for @sampleHabitRead.
+  ///
+  /// In en, this message translates to:
+  /// **'Read'**
+  String get sampleHabitRead;
+
+  /// No description provided for @sampleHabitReadTarget.
+  ///
+  /// In en, this message translates to:
+  /// **'20 pages'**
+  String get sampleHabitReadTarget;
+
+  /// No description provided for @sampleHabitReadSmall.
+  ///
+  /// In en, this message translates to:
+  /// **'1 page'**
+  String get sampleHabitReadSmall;
+
+  /// No description provided for @sampleHabitWater.
+  ///
+  /// In en, this message translates to:
+  /// **'Drink water'**
+  String get sampleHabitWater;
+
+  /// No description provided for @sampleHabitWaterTarget.
+  ///
+  /// In en, this message translates to:
+  /// **'8 glasses'**
+  String get sampleHabitWaterTarget;
+
+  /// No description provided for @sampleHabitWaterSmall.
+  ///
+  /// In en, this message translates to:
+  /// **'4 glasses'**
+  String get sampleHabitWaterSmall;
+
+  /// No description provided for @habitsEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'Your habits will be listed here. You can add, edit and archive them soon.'**
+  String get habitsEmpty;
+
+  /// No description provided for @habitsAdd.
+  ///
+  /// In en, this message translates to:
+  /// **'New habit'**
+  String get habitsAdd;
+
+  /// No description provided for @comingSoon.
+  ///
+  /// In en, this message translates to:
+  /// **'Coming soon'**
+  String get comingSoon;
+
+  /// No description provided for @progressLast7Days.
+  ///
+  /// In en, this message translates to:
+  /// **'Last 7 days'**
+  String get progressLast7Days;
+
+  /// No description provided for @progressPlaceholder.
+  ///
+  /// In en, this message translates to:
+  /// **'Here you will see your small steps and comebacks, not just streaks.'**
+  String get progressPlaceholder;
+
+  /// No description provided for @settingsReminders.
+  ///
+  /// In en, this message translates to:
+  /// **'Reminders'**
+  String get settingsReminders;
+
+  /// No description provided for @settingsPrivacy.
+  ///
+  /// In en, this message translates to:
+  /// **'Privacy'**
+  String get settingsPrivacy;
+
+  /// No description provided for @settingsPrivacySummary.
+  ///
+  /// In en, this message translates to:
+  /// **'Your data is stored only on this device.'**
+  String get settingsPrivacySummary;
 }
 
 class _AppLocalizationsDelegate
