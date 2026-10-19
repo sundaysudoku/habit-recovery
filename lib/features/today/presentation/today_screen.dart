@@ -1,66 +1,96 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
 
+import '../../../core/time/clock.dart';
+import '../../../core/time/local_date.dart';
 import '../../../l10n/app_localizations.dart';
+import '../../habits/data/habit_repository.dart';
+import '../../habits/domain/habit.dart';
+import '../../habits/presentation/habits_screen.dart';
+import '../data/check_in_repository.dart';
 import '../domain/check_in_status.dart';
 
-/// Prototype with sample habits; real data arrives in Phase 3.
-class TodayScreen extends StatefulWidget {
+final _checkInsForDateProvider =
+    StreamProvider.family<Map<int, CheckInStatus>, LocalDate>(
+      (ref, date) => ref.watch(checkInRepositoryProvider).watchForDate(date),
+    );
+
+class TodayScreen extends ConsumerWidget {
   const TodayScreen({super.key});
 
   @override
-  State<TodayScreen> createState() => _TodayScreenState();
-}
-
-class _TodayScreenState extends State<TodayScreen> {
-  final _checkIns = <int, CheckInStatus>{};
-
-  @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context);
     final locale = Localizations.localeOf(context).toLanguageTag();
-    final today = DateFormat.yMMMMEEEEd(locale).format(DateTime.now());
-    final habits = [
-      (
-        l10n.sampleHabitWalk,
-        l10n.sampleHabitWalkTarget,
-        l10n.sampleHabitWalkSmall,
-      ),
-      (
-        l10n.sampleHabitRead,
-        l10n.sampleHabitReadTarget,
-        l10n.sampleHabitReadSmall,
-      ),
-      (
-        l10n.sampleHabitWater,
-        l10n.sampleHabitWaterTarget,
-        l10n.sampleHabitWaterSmall,
-      ),
-    ];
+    final date = LocalDate.fromDateTime(ref.watch(clockProvider)());
+    final allHabits = ref.watch(activeHabitsProvider).value;
+    final checkIns =
+        ref.watch(_checkInsForDateProvider(date)).value ?? const {};
+    final habits = allHabits?.where((h) => h.isScheduledOn(date)).toList();
 
     return Scaffold(
       appBar: AppBar(title: Text(l10n.navToday)),
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
-          Text(today, style: Theme.of(context).textTheme.titleMedium),
+          Text(
+            DateFormat.yMMMMEEEEd(locale).format(date.toLocalDateTime()),
+            style: Theme.of(context).textTheme.titleMedium,
+          ),
           const SizedBox(height: 4),
           Text(l10n.todaySubtitle),
           const SizedBox(height: 16),
-          for (var i = 0; i < habits.length; i++)
-            _HabitCheckInCard(
-              name: habits[i].$1,
-              target: habits[i].$2,
-              smallerTarget: habits[i].$3,
-              status: _checkIns[i],
-              onChanged: (status) => setState(() {
-                if (status == null) {
-                  _checkIns.remove(i);
-                } else {
-                  _checkIns[i] = status;
-                }
-              }),
-            ),
+          if (allHabits == null)
+            const SizedBox.shrink()
+          else if (allHabits.isEmpty)
+            _TodayMessage(
+              message: l10n.todayNoHabits,
+              action: FilledButton.icon(
+                onPressed: () => openHabitForm(context),
+                icon: const Icon(Icons.add),
+                label: Text(l10n.habitsAdd),
+              ),
+            )
+          else if (habits!.isEmpty)
+            _TodayMessage(message: l10n.todayNothingScheduled)
+          else
+            for (final habit in habits)
+              _HabitCheckInCard(
+                key: ValueKey(habit.id),
+                habit: habit,
+                status: checkIns[habit.id],
+                onChanged: (status) {
+                  final repo = ref.read(checkInRepositoryProvider);
+                  status == null
+                      ? repo.clearToday(habit.id)
+                      : repo.setToday(habit.id, status);
+                },
+              ),
+        ],
+      ),
+    );
+  }
+}
+
+class _TodayMessage extends StatelessWidget {
+  const _TodayMessage({required this.message, this.action});
+
+  final String message;
+  final Widget? action;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 32),
+      child: Column(
+        children: [
+          Text(
+            message,
+            textAlign: TextAlign.center,
+            style: Theme.of(context).textTheme.bodyLarge,
+          ),
+          if (action != null) ...[const SizedBox(height: 16), action!],
         ],
       ),
     );
@@ -69,16 +99,13 @@ class _TodayScreenState extends State<TodayScreen> {
 
 class _HabitCheckInCard extends StatelessWidget {
   const _HabitCheckInCard({
-    required this.name,
-    required this.target,
-    required this.smallerTarget,
+    super.key,
+    required this.habit,
     required this.status,
     required this.onChanged,
   });
 
-  final String name;
-  final String target;
-  final String smallerTarget;
+  final Habit habit;
   final CheckInStatus? status;
   final ValueChanged<CheckInStatus?> onChanged;
 
@@ -93,10 +120,10 @@ class _HabitCheckInCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(name, style: theme.textTheme.titleMedium),
+            Text(habit.name, style: theme.textTheme.titleMedium),
             const SizedBox(height: 4),
             Text(
-              l10n.habitTargets(target, smallerTarget),
+              l10n.habitTargets(habit.normalTarget, habit.smallerTarget),
               style: theme.textTheme.bodyMedium?.copyWith(
                 color: theme.colorScheme.onSurfaceVariant,
               ),

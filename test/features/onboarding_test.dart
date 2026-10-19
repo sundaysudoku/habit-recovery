@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
+import 'package:shared_preferences/shared_preferences.dart';
+
 import '../helpers.dart';
 
 void main() {
   testWidgets('first launch shows onboarding, finishing it opens Today', (
     tester,
   ) async {
-    final prefs = await pumpApp(tester);
+    await pumpApp(tester);
+    final prefs = await SharedPreferences.getInstance();
 
     expect(find.text('Build habits gently'), findsOneWidget);
     expect(find.byType(NavigationBar), findsNothing);

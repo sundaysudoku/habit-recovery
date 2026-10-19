@@ -218,64 +218,10 @@ abstract class AppLocalizations {
   /// **'Not today'**
   String get checkInNotDone;
 
-  /// No description provided for @sampleHabitWalk.
-  ///
-  /// In en, this message translates to:
-  /// **'Walk'**
-  String get sampleHabitWalk;
-
-  /// No description provided for @sampleHabitWalkTarget.
-  ///
-  /// In en, this message translates to:
-  /// **'30 minutes'**
-  String get sampleHabitWalkTarget;
-
-  /// No description provided for @sampleHabitWalkSmall.
-  ///
-  /// In en, this message translates to:
-  /// **'5 minutes'**
-  String get sampleHabitWalkSmall;
-
-  /// No description provided for @sampleHabitRead.
-  ///
-  /// In en, this message translates to:
-  /// **'Read'**
-  String get sampleHabitRead;
-
-  /// No description provided for @sampleHabitReadTarget.
-  ///
-  /// In en, this message translates to:
-  /// **'20 pages'**
-  String get sampleHabitReadTarget;
-
-  /// No description provided for @sampleHabitReadSmall.
-  ///
-  /// In en, this message translates to:
-  /// **'1 page'**
-  String get sampleHabitReadSmall;
-
-  /// No description provided for @sampleHabitWater.
-  ///
-  /// In en, this message translates to:
-  /// **'Drink water'**
-  String get sampleHabitWater;
-
-  /// No description provided for @sampleHabitWaterTarget.
-  ///
-  /// In en, this message translates to:
-  /// **'8 glasses'**
-  String get sampleHabitWaterTarget;
-
-  /// No description provided for @sampleHabitWaterSmall.
-  ///
-  /// In en, this message translates to:
-  /// **'4 glasses'**
-  String get sampleHabitWaterSmall;
-
   /// No description provided for @habitsEmpty.
   ///
   /// In en, this message translates to:
-  /// **'Your habits will be listed here. You can add, edit and archive them soon.'**
+  /// **'No habits yet. Tap New habit to add your first one.'**
   String get habitsEmpty;
 
   /// No description provided for @habitsAdd.
@@ -283,12 +229,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'New habit'**
   String get habitsAdd;
-
-  /// No description provided for @comingSoon.
-  ///
-  /// In en, this message translates to:
-  /// **'Coming soon'**
-  String get comingSoon;
 
   /// No description provided for @progressLast7Days.
   ///
@@ -319,6 +259,174 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Your data is stored only on this device.'**
   String get settingsPrivacySummary;
+
+  /// No description provided for @settingsRemindersSoon.
+  ///
+  /// In en, this message translates to:
+  /// **'Reminders will be available in a later update.'**
+  String get settingsRemindersSoon;
+
+  /// No description provided for @habitsArchived.
+  ///
+  /// In en, this message translates to:
+  /// **'Archived ({count})'**
+  String habitsArchived(int count);
+
+  /// No description provided for @todayNoHabits.
+  ///
+  /// In en, this message translates to:
+  /// **'Add a habit to start. Small is fine.'**
+  String get todayNoHabits;
+
+  /// No description provided for @todayNothingScheduled.
+  ///
+  /// In en, this message translates to:
+  /// **'Nothing scheduled today. Rest is part of the plan too.'**
+  String get todayNothingScheduled;
+
+  /// No description provided for @habitNewTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'New habit'**
+  String get habitNewTitle;
+
+  /// No description provided for @habitEditTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit habit'**
+  String get habitEditTitle;
+
+  /// No description provided for @habitNameLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Habit'**
+  String get habitNameLabel;
+
+  /// No description provided for @habitNameHint.
+  ///
+  /// In en, this message translates to:
+  /// **'e.g. Walk'**
+  String get habitNameHint;
+
+  /// No description provided for @habitTargetLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Normal goal'**
+  String get habitTargetLabel;
+
+  /// No description provided for @habitTargetHint.
+  ///
+  /// In en, this message translates to:
+  /// **'e.g. 30 minutes'**
+  String get habitTargetHint;
+
+  /// No description provided for @habitSmallerLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Smaller goal'**
+  String get habitSmallerLabel;
+
+  /// No description provided for @habitSmallerHint.
+  ///
+  /// In en, this message translates to:
+  /// **'e.g. 5 minutes'**
+  String get habitSmallerHint;
+
+  /// No description provided for @habitSmallerHelper.
+  ///
+  /// In en, this message translates to:
+  /// **'The easy version for busy or low-energy days. It still counts.'**
+  String get habitSmallerHelper;
+
+  /// No description provided for @habitScheduleLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Schedule'**
+  String get habitScheduleLabel;
+
+  /// No description provided for @scheduleDaily.
+  ///
+  /// In en, this message translates to:
+  /// **'Every day'**
+  String get scheduleDaily;
+
+  /// No description provided for @scheduleSelectedDays.
+  ///
+  /// In en, this message translates to:
+  /// **'Selected days'**
+  String get scheduleSelectedDays;
+
+  /// No description provided for @scheduleNoDaysError.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose at least one day.'**
+  String get scheduleNoDaysError;
+
+  /// No description provided for @habitReminderLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Reminder'**
+  String get habitReminderLabel;
+
+  /// No description provided for @habitReminderOff.
+  ///
+  /// In en, this message translates to:
+  /// **'Off'**
+  String get habitReminderOff;
+
+  /// No description provided for @habitReminderChange.
+  ///
+  /// In en, this message translates to:
+  /// **'Change time'**
+  String get habitReminderChange;
+
+  /// No description provided for @habitArchive.
+  ///
+  /// In en, this message translates to:
+  /// **'Archive'**
+  String get habitArchive;
+
+  /// No description provided for @habitUnarchive.
+  ///
+  /// In en, this message translates to:
+  /// **'Restore'**
+  String get habitUnarchive;
+
+  /// No description provided for @habitDeleteTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete habit?'**
+  String get habitDeleteTitle;
+
+  /// No description provided for @habitDeleteBody.
+  ///
+  /// In en, this message translates to:
+  /// **'\"{name}\" and all its check-ins will be permanently deleted. Archive it instead if you might want it back.'**
+  String habitDeleteBody(String name);
+
+  /// No description provided for @actionSave.
+  ///
+  /// In en, this message translates to:
+  /// **'Save'**
+  String get actionSave;
+
+  /// No description provided for @actionCancel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get actionCancel;
+
+  /// No description provided for @actionDelete.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete'**
+  String get actionDelete;
+
+  /// No description provided for @fieldRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Please fill this in.'**
+  String get fieldRequired;
 }
 
 class _AppLocalizationsDelegate

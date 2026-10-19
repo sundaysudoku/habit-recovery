@@ -76,41 +76,11 @@ class AppLocalizationsEn extends AppLocalizations {
   String get checkInNotDone => 'Not today';
 
   @override
-  String get sampleHabitWalk => 'Walk';
-
-  @override
-  String get sampleHabitWalkTarget => '30 minutes';
-
-  @override
-  String get sampleHabitWalkSmall => '5 minutes';
-
-  @override
-  String get sampleHabitRead => 'Read';
-
-  @override
-  String get sampleHabitReadTarget => '20 pages';
-
-  @override
-  String get sampleHabitReadSmall => '1 page';
-
-  @override
-  String get sampleHabitWater => 'Drink water';
-
-  @override
-  String get sampleHabitWaterTarget => '8 glasses';
-
-  @override
-  String get sampleHabitWaterSmall => '4 glasses';
-
-  @override
   String get habitsEmpty =>
-      'Your habits will be listed here. You can add, edit and archive them soon.';
+      'No habits yet. Tap New habit to add your first one.';
 
   @override
   String get habitsAdd => 'New habit';
-
-  @override
-  String get comingSoon => 'Coming soon';
 
   @override
   String get progressLast7Days => 'Last 7 days';
@@ -128,4 +98,95 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get settingsPrivacySummary =>
       'Your data is stored only on this device.';
+
+  @override
+  String get settingsRemindersSoon =>
+      'Reminders will be available in a later update.';
+
+  @override
+  String habitsArchived(int count) {
+    return 'Archived ($count)';
+  }
+
+  @override
+  String get todayNoHabits => 'Add a habit to start. Small is fine.';
+
+  @override
+  String get todayNothingScheduled =>
+      'Nothing scheduled today. Rest is part of the plan too.';
+
+  @override
+  String get habitNewTitle => 'New habit';
+
+  @override
+  String get habitEditTitle => 'Edit habit';
+
+  @override
+  String get habitNameLabel => 'Habit';
+
+  @override
+  String get habitNameHint => 'e.g. Walk';
+
+  @override
+  String get habitTargetLabel => 'Normal goal';
+
+  @override
+  String get habitTargetHint => 'e.g. 30 minutes';
+
+  @override
+  String get habitSmallerLabel => 'Smaller goal';
+
+  @override
+  String get habitSmallerHint => 'e.g. 5 minutes';
+
+  @override
+  String get habitSmallerHelper =>
+      'The easy version for busy or low-energy days. It still counts.';
+
+  @override
+  String get habitScheduleLabel => 'Schedule';
+
+  @override
+  String get scheduleDaily => 'Every day';
+
+  @override
+  String get scheduleSelectedDays => 'Selected days';
+
+  @override
+  String get scheduleNoDaysError => 'Choose at least one day.';
+
+  @override
+  String get habitReminderLabel => 'Reminder';
+
+  @override
+  String get habitReminderOff => 'Off';
+
+  @override
+  String get habitReminderChange => 'Change time';
+
+  @override
+  String get habitArchive => 'Archive';
+
+  @override
+  String get habitUnarchive => 'Restore';
+
+  @override
+  String get habitDeleteTitle => 'Delete habit?';
+
+  @override
+  String habitDeleteBody(String name) {
+    return '\"$name\" and all its check-ins will be permanently deleted. Archive it instead if you might want it back.';
+  }
+
+  @override
+  String get actionSave => 'Save';
+
+  @override
+  String get actionCancel => 'Cancel';
+
+  @override
+  String get actionDelete => 'Delete';
+
+  @override
+  String get fieldRequired => 'Please fill this in.';
 }

@@ -76,41 +76,11 @@ class AppLocalizationsVi extends AppLocalizations {
   String get checkInNotDone => 'Hôm nay nghỉ';
 
   @override
-  String get sampleHabitWalk => 'Đi bộ';
-
-  @override
-  String get sampleHabitWalkTarget => '30 phút';
-
-  @override
-  String get sampleHabitWalkSmall => '5 phút';
-
-  @override
-  String get sampleHabitRead => 'Đọc sách';
-
-  @override
-  String get sampleHabitReadTarget => '20 trang';
-
-  @override
-  String get sampleHabitReadSmall => '1 trang';
-
-  @override
-  String get sampleHabitWater => 'Uống nước';
-
-  @override
-  String get sampleHabitWaterTarget => '8 cốc';
-
-  @override
-  String get sampleHabitWaterSmall => '4 cốc';
-
-  @override
   String get habitsEmpty =>
-      'Danh sách thói quen của bạn sẽ hiện ở đây. Sắp tới bạn có thể thêm, sửa và lưu trữ chúng.';
+      'Chưa có thói quen nào. Bấm Thói quen mới để thêm thói quen đầu tiên.';
 
   @override
   String get habitsAdd => 'Thói quen mới';
-
-  @override
-  String get comingSoon => 'Sắp ra mắt';
 
   @override
   String get progressLast7Days => '7 ngày qua';
@@ -128,4 +98,96 @@ class AppLocalizationsVi extends AppLocalizations {
   @override
   String get settingsPrivacySummary =>
       'Dữ liệu của bạn chỉ được lưu trên máy này.';
+
+  @override
+  String get settingsRemindersSoon =>
+      'Tính năng nhắc nhở sẽ có trong bản cập nhật sau.';
+
+  @override
+  String habitsArchived(int count) {
+    return 'Đã lưu trữ ($count)';
+  }
+
+  @override
+  String get todayNoHabits =>
+      'Thêm một thói quen để bắt đầu. Nhỏ thôi cũng được.';
+
+  @override
+  String get todayNothingScheduled =>
+      'Hôm nay không có lịch. Nghỉ ngơi cũng là một phần của kế hoạch.';
+
+  @override
+  String get habitNewTitle => 'Thói quen mới';
+
+  @override
+  String get habitEditTitle => 'Sửa thói quen';
+
+  @override
+  String get habitNameLabel => 'Thói quen';
+
+  @override
+  String get habitNameHint => 'Ví dụ: Đi bộ';
+
+  @override
+  String get habitTargetLabel => 'Mục tiêu thường';
+
+  @override
+  String get habitTargetHint => 'Ví dụ: 30 phút';
+
+  @override
+  String get habitSmallerLabel => 'Mục tiêu nhỏ';
+
+  @override
+  String get habitSmallerHint => 'Ví dụ: 5 phút';
+
+  @override
+  String get habitSmallerHelper =>
+      'Phiên bản dễ cho ngày bận hoặc mệt. Vẫn được tính.';
+
+  @override
+  String get habitScheduleLabel => 'Lịch';
+
+  @override
+  String get scheduleDaily => 'Hằng ngày';
+
+  @override
+  String get scheduleSelectedDays => 'Chọn ngày';
+
+  @override
+  String get scheduleNoDaysError => 'Hãy chọn ít nhất một ngày.';
+
+  @override
+  String get habitReminderLabel => 'Nhắc nhở';
+
+  @override
+  String get habitReminderOff => 'Tắt';
+
+  @override
+  String get habitReminderChange => 'Đổi giờ';
+
+  @override
+  String get habitArchive => 'Lưu trữ';
+
+  @override
+  String get habitUnarchive => 'Khôi phục';
+
+  @override
+  String get habitDeleteTitle => 'Xóa thói quen?';
+
+  @override
+  String habitDeleteBody(String name) {
+    return '\"$name\" và mọi check-in của nó sẽ bị xóa vĩnh viễn. Hãy lưu trữ nếu bạn có thể muốn dùng lại.';
+  }
+
+  @override
+  String get actionSave => 'Lưu';
+
+  @override
+  String get actionCancel => 'Hủy';
+
+  @override
+  String get actionDelete => 'Xóa';
+
+  @override
+  String get fieldRequired => 'Vui lòng điền mục này.';
 }

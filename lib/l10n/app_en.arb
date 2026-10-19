@@ -1,8 +1,9 @@
 {
   "@@locale": "en",
   "appTitle": "Habit Recovery",
-  "@appTitle": {"description": "Name of the app."},
-
+  "@appTitle": {
+    "description": "Name of the app."
+  },
   "onboardingTitle1": "Build habits gently",
   "onboardingBody1": "Pick a few habits that matter to you. Doing a smaller version still counts.",
   "onboardingTitle2": "Missed a few days? Start again",
@@ -15,45 +16,91 @@
   "onboardingPageIndicator": "Page {current} of {total}",
   "@onboardingPageIndicator": {
     "description": "Screen reader label for the onboarding page dots.",
-    "placeholders": {"current": {"type": "int"}, "total": {"type": "int"}}
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
   },
-
   "navToday": "Today",
   "navHabits": "Habits",
   "navProgress": "Progress",
   "navSettings": "Settings",
-
   "todaySubtitle": "Any step today is a good step.",
   "habitTargets": "Goal: {target} · Smaller: {smallerTarget}",
   "@habitTargets": {
     "description": "Normal target and smaller target of a habit.",
-    "placeholders": {"target": {"type": "String"}, "smallerTarget": {"type": "String"}}
+    "placeholders": {
+      "target": {
+        "type": "String"
+      },
+      "smallerTarget": {
+        "type": "String"
+      }
+    }
   },
   "checkInNormal": "Done",
-  "@checkInNormal": {"description": "Check-in: completed the normal target."},
+  "@checkInNormal": {
+    "description": "Check-in: completed the normal target."
+  },
   "checkInSmaller": "Small step",
-  "@checkInSmaller": {"description": "Check-in: completed the smaller target."},
+  "@checkInSmaller": {
+    "description": "Check-in: completed the smaller target."
+  },
   "checkInNotDone": "Not today",
-  "@checkInNotDone": {"description": "Check-in: did not do the habit today. Must sound neutral, not judgmental."},
-
-  "sampleHabitWalk": "Walk",
-  "sampleHabitWalkTarget": "30 minutes",
-  "sampleHabitWalkSmall": "5 minutes",
-  "sampleHabitRead": "Read",
-  "sampleHabitReadTarget": "20 pages",
-  "sampleHabitReadSmall": "1 page",
-  "sampleHabitWater": "Drink water",
-  "sampleHabitWaterTarget": "8 glasses",
-  "sampleHabitWaterSmall": "4 glasses",
-
-  "habitsEmpty": "Your habits will be listed here. You can add, edit and archive them soon.",
+  "@checkInNotDone": {
+    "description": "Check-in: did not do the habit today. Must sound neutral, not judgmental."
+  },
+  "habitsEmpty": "No habits yet. Tap New habit to add your first one.",
   "habitsAdd": "New habit",
-  "comingSoon": "Coming soon",
-
   "progressLast7Days": "Last 7 days",
   "progressPlaceholder": "Here you will see your small steps and comebacks, not just streaks.",
-
   "settingsReminders": "Reminders",
   "settingsPrivacy": "Privacy",
-  "settingsPrivacySummary": "Your data is stored only on this device."
+  "settingsPrivacySummary": "Your data is stored only on this device.",
+  "settingsRemindersSoon": "Reminders will be available in a later update.",
+  "habitsArchived": "Archived ({count})",
+  "@habitsArchived": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "todayNoHabits": "Add a habit to start. Small is fine.",
+  "todayNothingScheduled": "Nothing scheduled today. Rest is part of the plan too.",
+  "habitNewTitle": "New habit",
+  "habitEditTitle": "Edit habit",
+  "habitNameLabel": "Habit",
+  "habitNameHint": "e.g. Walk",
+  "habitTargetLabel": "Normal goal",
+  "habitTargetHint": "e.g. 30 minutes",
+  "habitSmallerLabel": "Smaller goal",
+  "habitSmallerHint": "e.g. 5 minutes",
+  "habitSmallerHelper": "The easy version for busy or low-energy days. It still counts.",
+  "habitScheduleLabel": "Schedule",
+  "scheduleDaily": "Every day",
+  "scheduleSelectedDays": "Selected days",
+  "scheduleNoDaysError": "Choose at least one day.",
+  "habitReminderLabel": "Reminder",
+  "habitReminderOff": "Off",
+  "habitReminderChange": "Change time",
+  "habitArchive": "Archive",
+  "habitUnarchive": "Restore",
+  "habitDeleteTitle": "Delete habit?",
+  "habitDeleteBody": "\"{name}\" and all its check-ins will be permanently deleted. Archive it instead if you might want it back.",
+  "@habitDeleteBody": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "actionSave": "Save",
+  "actionCancel": "Cancel",
+  "actionDelete": "Delete",
+  "fieldRequired": "Please fill this in."
 }

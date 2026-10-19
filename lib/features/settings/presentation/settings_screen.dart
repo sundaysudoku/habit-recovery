@@ -16,7 +16,7 @@ class SettingsScreen extends StatelessWidget {
           SwitchListTile(
             secondary: const Icon(Icons.notifications_outlined),
             title: Text(l10n.settingsReminders),
-            subtitle: Text(l10n.comingSoon),
+            subtitle: Text(l10n.settingsRemindersSoon),
             value: false,
             onChanged: null,
           ),

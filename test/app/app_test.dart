@@ -38,7 +38,10 @@ void main() {
       find.descendant(of: find.byType(AppBar), matching: find.text('Hôm nay')),
       findsOneWidget,
     );
-    expect(find.text('Đi bộ'), findsOneWidget);
+    expect(
+      find.text('Thêm một thói quen để bắt đầu. Nhỏ thôi cũng được.'),
+      findsOneWidget,
+    );
   });
 
   testWidgets('no layout overflow with large text in Vietnamese', (
