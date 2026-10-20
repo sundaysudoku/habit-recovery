@@ -54,7 +54,9 @@ jobs:
             keytool -list -keystore android/app/upload-keystore.jks -storepass "$PW" -alias upload >/dev/null
           fi
       - name: Build release bundle (.aab, debug-signed unless key.properties exists)
-        run: flutter build appbundle --release
+        env:
+          ORG_GRADLE_PROJECT_admobAppId: ca-app-pub-6048608609640389~5313476703
+        run: flutter build appbundle --release --dart-define=ADMOB_BANNER_UNIT_ID=ca-app-pub-6048608609640389/8346834157
       - name: Verify the bundle is signed with the upload key (only when key.properties exists)
         run: |
           if [ -f android/key.properties ]; then
