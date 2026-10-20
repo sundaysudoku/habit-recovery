@@ -1,0 +1,22 @@
+name: Check upload key
+on: workflow_dispatch
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    env:
+      UPLOAD_KEYSTORE_BASE64: ${{ secrets.UPLOAD_KEYSTORE_BASE64 }}
+      UPLOAD_KEY_PASSWORD: ${{ secrets.UPLOAD_KEY_PASSWORD }}
+    steps:
+      - name: Password secret exists
+        run: test -n "$UPLOAD_KEY_PASSWORD"
+      - name: Password has 24 characters
+        run: test "${#UPLOAD_KEY_PASSWORD}" -eq 24
+      - name: Password has no spaces or line breaks
+        run: |
+          case "$UPLOAD_KEY_PASSWORD" in *[[:space:]]*) exit 1;; esac
+      - name: Keystore secret decodes to the right file
+        run: |
+          echo "$UPLOAD_KEYSTORE_BASE64" | base64 -d > k.jks
+          test "$(wc -c < k.jks)" -eq 2648
+      - name: Password opens the keystore
+        run: keytool -list -keystore k.jks -storepass "$UPLOAD_KEY_PASSWORD" -alias upload > /dev/null
