@@ -42,6 +42,17 @@ jobs:
             echo "$UPLOAD_KEYSTORE_BASE64" | base64 -d > android/app/upload-keystore.jks
             printf 'storeFile=upload-keystore.jks\nstorePassword=%s\nkeyAlias=upload\nkeyPassword=%s\n' "$UPLOAD_KEY_PASSWORD" "$UPLOAD_KEY_PASSWORD" > android/key.properties
           fi
+      - name: Check upload key - file decodes to a keystore
+        run: |
+          if [ -f android/app/upload-keystore.jks ]; then
+            test "$(wc -c < android/app/upload-keystore.jks)" -eq 2648
+          fi
+      - name: Check upload key - password opens it
+        run: |
+          if [ -f android/key.properties ]; then
+            PW=$(grep '^storePassword=' android/key.properties | cut -d= -f2-)
+            keytool -list -keystore android/app/upload-keystore.jks -storepass "$PW" -alias upload >/dev/null
+          fi
       - name: Build release bundle (.aab, debug-signed unless key.properties exists)
         run: flutter build appbundle --release
       - uses: actions/upload-artifact@v4
