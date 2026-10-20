@@ -55,6 +55,11 @@ jobs:
           fi
       - name: Build release bundle (.aab, debug-signed unless key.properties exists)
         run: flutter build appbundle --release
+      - name: Verify the bundle is signed with the upload key (only when key.properties exists)
+        run: |
+          if [ -f android/key.properties ]; then
+            keytool -printcert -jarfile build/app/outputs/bundle/release/app-release.aab | grep -q "SHA256: BB:95:F8:B9:D7:58:35:70:8D:FD:25:21:1B:61:B7:70:3B:74:60:3E:F0:3A:C6:EF:A8:3A:0B:4C:63:5F:2E:9F"
+          fi
       - uses: actions/upload-artifact@v4
         with:
           name: habit-recovery-apk
