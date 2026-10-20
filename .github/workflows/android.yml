@@ -53,6 +53,18 @@ jobs:
             PW=$(grep '^storePassword=' android/key.properties | cut -d= -f2-)
             keytool -list -keystore android/app/upload-keystore.jks -storepass "$PW" -alias upload >/dev/null
           fi
+      - name: Export the PUBLIC upload certificate (safe to share; no private key)
+        run: |
+          if [ -f android/key.properties ]; then
+            PW=$(grep '^storePassword=' android/key.properties | cut -d= -f2-)
+            keytool -exportcert -rfc -keystore android/app/upload-keystore.jks -storepass "$PW" -alias upload -file upload_certificate.pem
+            keytool -printcert -file upload_certificate.pem | grep -E 'SHA1|SHA256'
+          fi
+      - uses: actions/upload-artifact@v4
+        if: hashFiles('upload_certificate.pem') != ''
+        with:
+          name: upload-certificate-pem
+          path: upload_certificate.pem
       - name: Build release bundle (.aab, debug-signed unless key.properties exists)
         env:
           ORG_GRADLE_PROJECT_admobAppId: ca-app-pub-6048608609640389~5313476703
